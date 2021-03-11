@@ -3,16 +3,16 @@
 /**
  * Magazine Post Carousel Widget.
  */
-class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
+class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'ms-product-category-grid-widget';
+        return 'ms-product-product-grid-widget';
     }
 
     /** Widget Title */
     public function get_title() {
-        return __('Product Category Grid', 'meta-store-elements');
+        return __('Product Product Grid', 'meta-store-elements');
     }
 
     /** Icon */
@@ -35,14 +35,25 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'product_categories', [
+                'product_categories', [
             'label' => __('Category 1', 'meta-store-elements'),
             'type' => \Elementor\Controls_Manager::SELECT2,
+            'default' => 0,
             'multiple' => true,
             'options' => My_Store_elements_get_woo_categories_list(),
                 ]
         );
 
+
+        // $this->add_control(
+        //         'product_category1', [
+        //     'label' => __('Category 1', 'meta-store-elements'),
+        //     'type' => \Elementor\Controls_Manager::SELECT2,
+        //     'default' => 0,
+        //     'multiple' => true,
+        //     'options' => My_Store_elements_get_woo_categories_list(),
+        //         ]
+        // );
 
         $this->end_controls_section();
 
@@ -134,23 +145,28 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
     /** Render Layout */
     protected function render() {
-        $settings = $this->get_settings_for_display();
-        $categories = $settings['product_categories'];
-        ?>
-        <div class="ms-product-category-grid"  style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
-          <?php foreach( $categories as $category ) {?>
-            <div>
-              <?php
-              $idcat = $category;
-              $thumbnail_id = get_woocommerce_term_meta( $idcat, 'thumbnail_id', true );
-              $image = wp_get_attachment_url( $thumbnail_id );
-              echo '<img src="'.$image.'" alt="" width="762" height="365" />'; ?>
-              <h1> <?php echo get_term($idcat )->name ?></h1>
-               <?php echo get_category_link($idcat); ?>
-            </div>
-           <?php } ?>
+      // Setup your custom query
+      // Setup your custom query
+      $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => 4
+      );
+      $loop = new WP_Query( $args );
+      $product = get_product($loop->post); ?>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <div>
+          <!-- <?php echo '<pre>' . var_export($product, true) . '</pre>'; ?> -->
+          <?php echo woocommerce_get_product_thumbnail('woocommerce_full_size'); ?>
+          <a href="<?php echo get_permalink( $loop->post->ID ) ?>">
+              <?php the_title(); ?>
+              <?php echo $product->get_price_html(); ?>
+          </a>
         </div>
-        <?php
+      <?php endwhile;?>
+    </div>
+      <?php wp_reset_query(); // Remember to reset
+
     }
 
 
