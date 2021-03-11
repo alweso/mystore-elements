@@ -383,11 +383,7 @@
         /** Render Layout **/
         protected function render() {
             $settings = $this->get_settings_for_display();
-            // echo "<pre>";
-            // print_r($settings);
-            // echo "</pre>";
             $product_type = isset( $settings['product_type'] ) ? $settings['product_type'] : 'latest';
-
             $args = $this->get_query_args( $product_type );
             $image_size = $settings['image_size_size'] ? $settings['image_size_size'] : 'large';
             $product_query = new WP_Query( $args );
@@ -395,7 +391,7 @@
                 <div class="">
 
                     <?php if( $product_query->have_posts() ) : ?>
-                        <ul data-carousel-options='{"autoplay":"true","items":"4"}'class="ms-product-slider owl-carousel">
+                        <ul data-carousel-options='{"autoplay":"true","items":"4","loop":"true","nav":"true"}'class="ms-product-slider owl-carousel">
                             <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>
                                 <li class="producteeg">
                                     <div class="product-image">
@@ -488,44 +484,5 @@
                 break;
             }
             return $args;
-        }
-
-        /** Render Header */
-        protected function render_header() {
-            $settings = $this->get_settings();
-            $this->add_render_attribute('header_attr', 'class', [
-                'ms-header',
-                ]
-            );
-
-            $link_open = $link_close = "";
-            $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
-            $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
-            $header_tag = $settings['header_tag'] ? $settings['header_tag'] : 'h2';
-
-            if ($settings['header_link']['url']) {
-                $link_open = '<a href="' . $settings['header_link']['url'] . '"' . $target . $nofollow . '>';
-                $link_close = '</a>';
-            }
-
-            if ($settings['header_title']) {
-                ?>
-                <?php echo '<' . esc_attr($header_tag) . ' ' . $this->get_render_attribute_string('header_attr') . '>' ?>
-                    <?php
-                        echo wp_kses( $link_open, array(
-                            'a' => array(
-                                'target' => array(),
-                                'rel' => array(),
-                                'href' => array()
-                            )
-                        ) );
-                        echo esc_html($settings['header_title']);
-                        echo wp_kses( $link_close, array(
-                            'a' => array()
-                        ) );
-                    ?>
-                <?php echo '</' . esc_attr($header_tag) . '>'; ?>
-                <?php
-            }
         }
     }

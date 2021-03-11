@@ -58,12 +58,7 @@
             var autoplay = productSlider.data('autoplay');
             var carouselOptions = productSlider.data('carousel-options');
             console.log(carouselOptions);
-            productSlider.owlCarousel({
-                items: items_no,
-                autoplay: autoplay,
-                loop: true,
-                // dots: dot_nav_show,
-            });
+            productSlider.owlCarousel(carouselOptions);
 
           });
         }
