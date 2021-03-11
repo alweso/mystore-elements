@@ -38,8 +38,8 @@
 
       ProductSlider: function ( $scope ) {
         var productSliders = $scope.find(".ms-product-slider");
-        const controls = JSON.parse(this.elements.$secondSelector.attr('data-controls'));
-        const dot_nav_show = Boolean(controls.dot_nav_show?true:false);
+        // const controls = JSON.parse(this.elements.$secondSelector.attr('data-controls'));
+        // const dot_nav_show = Boolean(controls.dot_nav_show?true:false);
         if (productSliders.length > 0) {
           productSliders.each(function () {
             var productSlider = $(this);
@@ -48,7 +48,7 @@
                 items: 5,
                 autoplay: true,
                 loop: true,
-                dots: dot_nav_show,
+                // dots: dot_nav_show,
             });
 
           });
