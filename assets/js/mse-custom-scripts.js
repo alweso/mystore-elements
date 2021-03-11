@@ -40,13 +40,27 @@
         var productSliders = $scope.find(".ms-product-slider");
         // const controls = JSON.parse(this.elements.$secondSelector.attr('data-controls'));
         // const dot_nav_show = Boolean(controls.dot_nav_show?true:false);
+
+        // $(".owl-carousel").each(function (index) {
+        //     var items_no = $(this).data('slides');
+        //     var autoplay = $(this).data('autoplay');
+        //     $(this).owlCarousel({ // use $(this)
+        //         items: items_no,
+        //         autoplay: autoplay
+        //     });
+        // });
+
+
         if (productSliders.length > 0) {
           productSliders.each(function () {
             var productSlider = $(this);
-
+            var items_no = productSlider.data('slides');
+            var autoplay = productSlider.data('autoplay');
+            var carouselOptions = productSlider.data('carousel-options');
+            console.log(carouselOptions);
             productSlider.owlCarousel({
-                items: 5,
-                autoplay: true,
+                items: items_no,
+                autoplay: autoplay,
                 loop: true,
                 // dots: dot_nav_show,
             });

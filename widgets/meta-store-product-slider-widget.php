@@ -391,15 +391,11 @@
             $args = $this->get_query_args( $product_type );
             $image_size = $settings['image_size_size'] ? $settings['image_size_size'] : 'large';
             $product_query = new WP_Query( $args );
-            $slide_controls    = [
-               'dot_nav_show' => $settings['dot_nav_show'],
-             ];
-            $slide_controls = \json_encode($slide_controls);
             ?>
                 <div class="">
 
                     <?php if( $product_query->have_posts() ) : ?>
-                        <ul data-controls="<?php echo esc_attr($slide_controls); ?>" class="ms-product-slider owl-carousel">
+                        <ul data-carousel-options='{"autoplay":"true","items":"4"}'class="ms-product-slider owl-carousel">
                             <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>
                                 <li class="producteeg">
                                     <div class="product-image">
