@@ -38,19 +38,6 @@
 
       ProductSlider: function ( $scope ) {
         var productSliders = $scope.find(".ms-product-slider");
-        // const controls = JSON.parse(this.elements.$secondSelector.attr('data-controls'));
-        // const dot_nav_show = Boolean(controls.dot_nav_show?true:false);
-
-        // $(".owl-carousel").each(function (index) {
-        //     var items_no = $(this).data('slides');
-        //     var autoplay = $(this).data('autoplay');
-        //     $(this).owlCarousel({ // use $(this)
-        //         items: items_no,
-        //         autoplay: autoplay
-        //     });
-        // });
-
-
         if (productSliders.length > 0) {
           productSliders.each(function () {
             var productSlider = $(this);
@@ -94,23 +81,19 @@
         }
       },
       TestimonialSlider: function ( $scope ) {
-        var tsliders = $scope.find(".ms-testimonial-slider");
 
-        if (tsliders.length > 0) {
-            tsliders.each(function () {
-                var tslider = $(this);
-                var slider_data = tslider.data('slider');
+        var tslider = $scope.find(".ms-testimonial-slider");
+        if (tslider.length > 0) {
+          tslider.each(function () {
+            var tslider = $(this);
+            var carouselOptions = tslider.data('carousel-options');
+            tslider.owlCarousel(carouselOptions);
 
-                tslider.owlCarousel({
-                    items: 1,
-                    loop: JSON.parse(slider_data.loop),
-                    autoplay: JSON.parse( slider_data.autoplay ),
-                    autoplayHoverPause: JSON.parse(slider_data.pause_on_hover),
-                    dots: JSON.parse(slider_data.show_dots)
-                });
-            });
+          });
         }
       },
+
+
       Tabs: function( $scope ) {
         var tabs = $scope.find(".ms-product-tabs-grid");
 

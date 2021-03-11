@@ -313,6 +313,7 @@
                 require_once( __DIR__ . '/widgets/meta-store-product-category-block1-widget.php' ); // Product Category Block 1
                 require_once( __DIR__ . '/widgets/meta-store-product-category-block2-widget.php' ); // Product Category Block 2
                 require_once( __DIR__ . '/widgets/meta-store-product-slider-widget.php' ); // Product Slider
+                require_once( __DIR__ . '/widgets/meta-store-category-grid-widget.php' ); // Category Grid
             }
 
             // Register widget
@@ -331,6 +332,7 @@
                 \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Category_Block1_Widget() ); // Procut Category Block 1
                 \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Category_Block2_Widget() ); // Procut Category Block 2
                 \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Slider_Widget() ); // Procut Category Block 2
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Category_Grid_Widget() ); // Procut Category Block 2
             }
         }
 

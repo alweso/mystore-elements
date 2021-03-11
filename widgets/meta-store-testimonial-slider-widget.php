@@ -390,11 +390,9 @@
 
             $testimonials = $settings['testimonials'];
 
-            $slider_datas = $this->get_slider_datas();
-
             if( !empty( $testimonials ) ) :
             ?>
-                <div class="ms-testimonial-slider owl-carousel" id="ms-testimonial-slider-<?php echo esc_attr( $this->get_id() ); ?>" data-slider="<?php echo esc_attr( $slider_datas ); ?>">
+                <div data-carousel-options='{"autoplay":"true","items":"2","loop":"true","nav":"true"}' class="ms-testimonial-slider owl-carousel" id="ms-testimonial-slider-<?php echo esc_attr( $this->get_id() ); ?>">
 
                     <?php foreach( $testimonials as $testimonial ) : ?>
                         <div class="testimonial">
@@ -448,24 +446,6 @@
                 </div>
             <?php
             endif;
-        }
-
-        /** Render Element Javascript **/
-        private function get_slider_datas() {
-            $settings = $this->get_settings_for_display();
-            $loop = ( $settings['loop'] ) ? 'true' : 'false';
-            $autoplay = ( $settings['autoplay'] ) ? 'true' : 'false';
-            $pause_on_hover = ( $settings['pause_on_hover'] ) ? 'true' : 'false';
-            $show_dots = ( $settings['show_dots'] ) ? 'true' : 'false';
-
-            $slider_datas = array(
-                'loop' => $loop,
-                'autoplay' => $autoplay,
-                'pause_on_hover' => $pause_on_hover,
-                'show_dots' => $show_dots,
-            );
-
-            return json_encode( $slider_datas );
         }
 
         protected function _content_template() {}
