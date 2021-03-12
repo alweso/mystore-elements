@@ -321,6 +321,7 @@
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Slider_Widget() ); // Slider
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Blog_Grid1_Widget() ); // Blog Grid 1
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Blog_Grid2_Widget() ); // Blog Grid 2
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Vertical_Menu_Widget() ); // Vertical Menu
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Instagram_Feeds_Widget() ); // Instagram Feeds
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Testimonial_Slider_Widget() ); // Testimonial Slider
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Cta_Widget() ); // Call To Action

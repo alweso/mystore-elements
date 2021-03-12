@@ -81,6 +81,26 @@
                 );
 
                 $this->add_control(
+                    'column_gap',
+                    [
+                        'label' => __( 'Column Gap', 'meta-store-elements' ),
+                        'type' => \Elementor\Controls_Manager::SLIDER,
+                        'size_units' => [ 'px' ],
+                        'range' => [
+                            'no' => [
+                                'min' => 0,
+                                'max' => 40,
+                                'step' => 1,
+                            ],
+                        ],
+                        'default' => [
+                            'unit' => 'px',
+                            'size' => 15,
+                        ],
+                    ]
+                );
+
+                $this->add_control(
                     'orderby',
                     [
                         'label' => __( 'Order By', 'meta-store-elements' ),
@@ -376,7 +396,7 @@
             $product_query = new WP_Query( $args );
             ?>
                 <div class="ms-product-list" id="ms-product-list-<?php echo esc_attr( $this->get_id() ); ?>">
-      
+
                     <?php if( $product_query->have_posts() ) : ?>
                         <ul class="product-list">
                             <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>

@@ -49,6 +49,47 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
       ]
     );
 
+    $this->add_control(
+      'number_of_products',
+      [
+        'label' => __( 'Number of products', 'menheer-plugin' ),
+        'type' => \Elementor\Controls_Manager::NUMBER,
+        'default' => __( 4, 'menheer-plugin' ),
+        'min' => 1,
+        'step' => 1,
+      ]
+    );
+
+    $this->add_control(
+      'number_of_columns',
+      [
+        'label' => __( 'Number of columns', 'menheer-plugin' ),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => '1fr 1fr 1fr 1fr',
+        'options'   => [
+          '1fr'      =>esc_html__( '1', 'menheer-plugin' ),
+          '1fr 1fr'      =>esc_html__( '2', 'menheer-plugin' ),
+          '1fr 1fr 1fr'      =>esc_html__( '3', 'menheer-plugin' ),
+          '1fr 1fr 1fr 1fr'      =>esc_html__( '4', 'menheer-plugin' ),
+          '1fr 1fr 1fr 1fr 1fr'      =>esc_html__( '5', 'menheer-plugin' ),
+        ],
+      ]
+    );
+
+
+    $this->add_control(
+      'column_gap',
+      [
+        'label' => __( 'Column Gap', 'meta-store-elements' ),
+        'type' => \Elementor\Controls_Manager::NUMBER,
+        'default' => __( 4, 'menheer-plugin' ),
+        'min' => 0,
+        'max' => 40,
+        'step' => 1,
+      ]
+    );
+
+
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -140,15 +181,18 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
   /** Render Layout */
   protected function render() {
     $settings = $this->get_settings_for_display();
-    $pickProductBy = $settings['pick_by'];?>
-    <!-- <h1> fsda<?php echo $pickProductBy; ?> </h1> -->
-    <?php switch ($pickProductBy) {
+    $pickProductBy = $settings['pick_by'];
+    $numberOfProducts = $settings['number_of_products'];
+    $numberOfColumns = $settings['number_of_columns'];
+    $columnGap = $settings['column_gap'];
+
+    switch ($pickProductBy) {
       case 'latest':
       $args = array(
         'post_type' => 'product',
         // 'orderby' => 'rating',
         'order' => 'DESC',
-        'posts_per_page' => 12,
+        'posts_per_page' => $numberOfProducts,
       );
       break;
 
@@ -160,7 +204,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         'orderby'   => 'meta_value_num',
         'meta_key'  => '_wc_average_rating',
         'order' => 'DESC',
-        'posts_per_page' => 12,
+        'posts_per_page' => $numberOfProducts,
       );
       break;
 
@@ -170,6 +214,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         // 'orderby' => 'rating',
         'order' => 'DESC',
         'post__in' => wc_get_featured_product_ids(),
+        'posts_per_page' => $numberOfProducts,
       );
       break;
 
@@ -179,6 +224,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         // 'orderby' => 'rating',
         'post__in' => wc_get_product_ids_on_sale(),
         'order' => 'DESC',
+        'posts_per_page' => $numberOfProducts,
       );
       break;
 
@@ -187,7 +233,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         'post_type' => 'product',
         'meta_key' => 'total_sales',
         'orderby' => 'meta_value_num',
-        'posts_per_page' => 12,
+        'posts_per_page' => $numberOfProducts,
       );
       break;
 
@@ -195,24 +241,30 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
 
 
 
-
+    echo do_shortcode('[products limit="4" columns="4" orderby="popularity" class="quick-sale" on_sale="true" ]');
 
     $loop = new WP_Query( $args );?>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-column-gap:15px;grid-row-gap:15px;">
+
+    <div style="display:grid;grid-template-columns:<?php echo $numberOfColumns ?>;grid-column-gap:<?php echo $columnGap ?>px;grid-row-gap:<?php echo $columnGap ?>;">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <?php  $product = get_product($loop->post); ?>
-        <div>
+        <?php $product = get_product($loop->post); ?>
+        <?php $rating = $product->get_average_rating(); ?>
+        <?php $ratingPercentage = ($rating/5)*100 ?>
+        <?php echo wc_get_product($product->ID); ?>
+        <div style="position:relative;">
+          <?php
+          if ($product->is_on_sale()) {?>
+            <span class="onsale">Sale!</span>
+            <?php
+          } ?>
           <!-- <?php echo '<pre>' . var_export($product, true) . '</pre>'; ?> -->
-
-          <hr></hr>
-          <!-- <h1><?php echo $product->date_on_sale_to ?></h1> -->
-          <!-- <h1><?php echo   $product->get_featured(); ?></h1> -->
-
           <?php echo woocommerce_get_product_thumbnail('woocommerce_thumbnail'); ?>
           <a href="<?php echo get_permalink( $product->ID ) ?>">
             <?php the_title(); ?>
           </a>
-          <p>average rating<?php echo $product->get_average_rating();?></p>
+          <?php if($rating > 0) { ?>
+              <div class="stars"><div class="stars-inner" style="--w:  <?php echo $ratingPercentage ?>%;"></div></div>
+          <?php } ?>
           <p>regular price<?php echo $product->get_regular_price(); ?></p>
           <p>sale price<?php echo $product->get_sale_price(); ?></p>
           <a href="<?php echo $product->add_to_cart_url() ?>" value="<?php echo esc_attr( $product->get_id() ); ?>" class="ajax_add_to_cart add_to_cart_button" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo esc_attr($sku) ?>"> Add to Cart </a>
@@ -231,4 +283,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
 
 
 
-}
+}?>
+<style>
+
+</style>
