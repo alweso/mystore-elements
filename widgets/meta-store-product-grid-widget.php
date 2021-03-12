@@ -43,10 +43,8 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         'options'   => [
           'all'      =>esc_html__( 'All', 'menheer-plugin' ),
           'total_sales'      =>esc_html__( 'Bestsellers', 'menheer-plugin' ),
-          'on_sale'      =>esc_html__( 'On Sale', 'menheer-plugin' ),
-          'top_rated'    =>esc_html__( 'Top Rated', 'menheer-plugin' ),
-          'post'    =>esc_html__( 'Post id', 'menheer-plugin' ),
-          'author'    =>esc_html__( 'Author', 'menheer-plugin' ),
+          ''      =>esc_html__( 'Top Rated', 'menheer-plugin' ),
+          ''      =>esc_html__( 'On Sale', 'menheer-plugin' ),
         ],
       ]
     );
@@ -141,74 +139,92 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
 
   /** Render Layout */
   protected function render() {
-    // Setup your custom query
-    // Setup your custom query
-   //  $args = array(
-   //  'post_type' => 'product',
-   //  // 'meta_key' => 'on_sale',
-   //  // 'orderby' => 'meta_value_num',
-   //  'posts_per_page' => 12,
-   //  'meta_query'     => array(
-   //     array(
-   //         'key'           => '_sale_price',
-   //         'value'         => 0,
-   //         'compare'       => '>',
-   //         'type'          => 'numeric'
-   //     )
-   // )
-   //  );
+    // $args = array(
+    // 'post_type' => 'product',
+    // // 'meta_key' => '_featured',
+    // // 'meta_value' => 'yes',
+    // 'orderby' => 'meta_value_num',
+    // 'posts_per_page' => 12,
+    // // 'meta_query' => array(
+    // //     array(
+    // //         'key'     => 'age',
+    // //         'value'   => array( 3, 4 ),
+    // //         'compare' => 'IN',
+    // //     ),
+    // // ),
+    // );
 
-    $args = array(
-    'post_type'   =>  'product',
-    // 'stock'       =>  1,
-    // 'showposts'   =>  6,
-        'posts_per_page' => 12,
-    'orderby'     =>  'date',
-    'order'       =>  'DESC',
-    'meta_query'  =>   array(
-        'key'   => '_featured',
-        'value' => 'yes'
-    ),
-);
-    $product_query = new WP_Query( $args );?>
-    <div class="">
+    // Bestsellers
+    // $args = array(
+    //     'post_type' => 'product',
+    //     'meta_key' => 'total_sales',
+    //     'orderby' => 'meta_value_num',
+    //     'posts_per_page' => 12,
+    // );
 
-        <?php if( $product_query->have_posts() ) : ?>
-            <ul class="" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
-                <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>
-                  <!-- <?php echo '<pre>';   var_dump($product_query); echo '</pre>';?> -->
-                    <li class="">
-                        <div class="">
-                         <?php $product_query->add_star_rating(); ?>
-                            <?php if( has_post_thumbnail() ) : ?>
-                                <?php
-                                    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), $image_size );
-                                ?>
-                                <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php echo esc_attr( My_Store_elements_get_altofimage( absint( get_post_thumbnail_id() ) ) ); ?>">
-                                </a>
-                        </div>
-                        <div class="">
+//     // on sale - show all sale products, even those after or before sale periods - to do
+//
+        // $args = array(
+        //         'post_type' => 'product',
+        //         // 'meta_key' => '_sale_price',
+        //         // 'orderby' => 'rating',
+        //          'post__in' => wc_get_product_ids_on_sale(),
+        //         'order' => 'DESC',
+        //         // 'meta_query' => array(
+        //         //   array(
+        //         //             'key' => '_sale_price',
+        //         //             'value' => '',
+        //         //             'compare' => '!='
+        //         //         ),
+        //         //         ),
+        //         );
 
-                                <?php woocommerce_template_loop_rating(); ?>
+                // featured working!
+              //
+                    $args = array(
+                            'post_type' => 'product',
+                            // 'meta_key' => '_featured',
+                            'orderby' => 'rating',
+                            'order' => 'DESC',
+                            'post__in' => wc_get_featured_product_ids(),
+                            // 'tax_query' => array(
+                            //     'taxonomy' => 'product_visibility',
+                            //     'field'    => 'name',
+                            //     'terms'    => 'featured',
+                            //     'operator' => 'IN', // or 'NOT IN' to exclude feature products
+                            // ),
+                            );
 
-                                <h3>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h3>
+    $loop = new WP_Query( $args );?>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                  <?php  $product = get_product($loop->post); ?>
+        <div>
+          <!-- <?php echo '<pre>' . var_export($product, true) . '</pre>'; ?> -->
+          <?php
+$date = new DateTime();
+echo $date->format('Y-m-d H:i:sP');
+?>
+          <hr></hr>
+          <!-- <h1><?php echo $product->date_on_sale_to ?></h1> -->
+          <!-- <h1><?php echo   $product->get_featured(); ?></h1> -->
 
-                                <?php woocommerce_template_loop_price(); ?>
-
-                            <?php endif; ?>
-                        </div>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        <?php wp_reset_postdata(); endif; ?>
+          <?php echo woocommerce_get_product_thumbnail('woocommerce_full_size'); ?>
+          <a href="<?php echo get_permalink( $product->ID ) ?>">
+            <?php the_title(); ?>
+            <p>average rating<?php echo $product->get_average_rating();?></p>
+            <p>regular price<?php echo $product->get_regular_price(); ?></p>
+            <p>sale price<?php echo $product->get_sale_price(); ?></p>
+          </a>
         </div>
-<h1>end of widget</h1>
+      <?php endwhile;?>
+    </div>
+    <h1>End of widget</h1>
+    <?php wp_reset_query(); // Remember to reset
 
 
-<?php
+
+
 
 
   }
