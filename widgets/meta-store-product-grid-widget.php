@@ -38,29 +38,31 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
       'pick_by', [
         'label' => __('Pick Products By', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => 0,
+        'default' => '',
         'options'   => [
-          'latest'      =>esc_html__( 'Latest', 'menheer-plugin' ),
-          'bestsellers'      =>esc_html__( 'Bestsellers', 'menheer-plugin' ),
-          'toprated'      =>esc_html__( 'Top Rated', 'menheer-plugin' ),
-          'onsale'      =>esc_html__( 'On Sale', 'menheer-plugin' ),
-          'featured'      =>esc_html__( 'Featured', 'menheer-plugin' ),
+          ''      =>esc_html__( 'All', 'menheer-plugin' ),
+          'best_selling="true"'      =>esc_html__( 'Bestsellers', 'menheer-plugin' ),
+          'top_rated="true"'      =>esc_html__( 'Top Rated', 'menheer-plugin' ),
+          'on_sale="true"'      =>esc_html__( 'On Sale', 'menheer-plugin' ),
+          // 'featured'      =>esc_html__( 'Featured', 'menheer-plugin' ),
         ],
       ]
     );
+
+    // choose categories of products - TOdo
 
     $this->add_control(
       'order_by', [
         'label' => __('Order Products By', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => 0,
+        'default' => '',
         'options'   => [
           'date'      =>esc_html__( 'Date', 'menheer-plugin' ),
           'id'      =>esc_html__( 'ID', 'menheer-plugin' ),
           'menu_order'      =>esc_html__( 'Menu Order', 'menheer-plugin' ),
-          'popularity'      =>esc_html__( 'Popularity', 'menheer-plugin' ),
+          'popularity'      =>esc_html__( 'Best selling', 'menheer-plugin' ),
           'rating'      =>esc_html__( 'Rating', 'menheer-plugin' ),
-          'title'      =>esc_html__( 'Title', 'menheer-plugin' ),
+          'title'      =>esc_html__( 'Name', 'menheer-plugin' ),
           'rand'      =>esc_html__( 'Random', 'menheer-plugin' ),
         ],
       ]
@@ -204,70 +206,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
     $numberOfColumns = $settings['number_of_columns'];
     $columnGap = $settings['column_gap'];
 
-    switch ($pickProductBy) {
-      case 'latest':
-      $args = array(
-        'post_type' => 'product',
-        // 'orderby' => 'rating',
-        'order' => 'DESC',
-        'posts_per_page' => $numberOfProducts,
-      );
-      break;
-
-      case 'toprated':
-      $args = array(
-        'post_type' => 'product',
-        // 'meta_key' => 'total_sales',
-        // 'orderby' => 'ratings',
-        'orderby'   => 'meta_value_num',
-        'meta_key'  => '_wc_average_rating',
-        'order' => 'DESC',
-        'posts_per_page' => $numberOfProducts,
-      );
-      break;
-
-      case 'featured':
-      $args = array(
-        'post_type' => 'product',
-        // 'orderby' => 'rating',
-        'order' => 'DESC',
-        'post__in' => wc_get_featured_product_ids(),
-        'posts_per_page' => $numberOfProducts,
-      );
-      break;
-
-      case 'onsale':
-      $args = array(
-        'post_type' => 'product',
-        // 'orderby' => 'rating',
-        'post__in' => wc_get_product_ids_on_sale(),
-        'order' => 'DESC',
-        'posts_per_page' => $numberOfProducts,
-      );
-      break;
-
-      case 'bestsellers':
-      $args = array(
-        'post_type' => 'product',
-        'meta_key' => 'total_sales',
-        'orderby' => 'meta_value_num',
-        'posts_per_page' => $numberOfProducts,
-      );
-      break;
-
-    }
-
-
-    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" orderby="'.$orderBy.'"   ]');
-    ?><h1>fdsfds</h1><?php
-
-
-
+    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" orderby="'.$orderBy.'" '.$pickProductBy.' class="quick-sale" ]');?>
+    <?php wp_reset_query(); // Remember to reset
   }
-
-
-
 }?>
-<style>
-
-</style>
