@@ -50,6 +50,23 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
     );
 
     $this->add_control(
+      'order_by', [
+        'label' => __('Order Products By', 'meta-store-elements'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => 0,
+        'options'   => [
+          'date'      =>esc_html__( 'Date', 'menheer-plugin' ),
+          'id'      =>esc_html__( 'ID', 'menheer-plugin' ),
+          'menu_order'      =>esc_html__( 'Menu Order', 'menheer-plugin' ),
+          'popularity'      =>esc_html__( 'Popularity', 'menheer-plugin' ),
+          'rating'      =>esc_html__( 'Rating', 'menheer-plugin' ),
+          'title'      =>esc_html__( 'Title', 'menheer-plugin' ),
+          'rand'      =>esc_html__( 'Random', 'menheer-plugin' ),
+        ],
+      ]
+    );
+
+    $this->add_control(
       'number_of_products',
       [
         'label' => __( 'Number of products', 'menheer-plugin' ),
@@ -67,11 +84,11 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         'type' => \Elementor\Controls_Manager::SELECT,
         'default' => '1fr 1fr 1fr 1fr',
         'options'   => [
-          '1fr'      =>esc_html__( '1', 'menheer-plugin' ),
-          '1fr 1fr'      =>esc_html__( '2', 'menheer-plugin' ),
-          '1fr 1fr 1fr'      =>esc_html__( '3', 'menheer-plugin' ),
-          '1fr 1fr 1fr 1fr'      =>esc_html__( '4', 'menheer-plugin' ),
-          '1fr 1fr 1fr 1fr 1fr'      =>esc_html__( '5', 'menheer-plugin' ),
+          '1'      =>esc_html__( '1', 'menheer-plugin' ),
+          '2'      =>esc_html__( '2', 'menheer-plugin' ),
+          '3'      =>esc_html__( '3', 'menheer-plugin' ),
+          '4'      =>esc_html__( '4', 'menheer-plugin' ),
+          '5'      =>esc_html__( '5', 'menheer-plugin' ),
         ],
       ]
     );
@@ -182,6 +199,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
   protected function render() {
     $settings = $this->get_settings_for_display();
     $pickProductBy = $settings['pick_by'];
+    $orderBy = $settings['order_by'];
     $numberOfProducts = $settings['number_of_products'];
     $numberOfColumns = $settings['number_of_columns'];
     $columnGap = $settings['column_gap'];
@@ -240,42 +258,8 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
     }
 
 
-
-    echo do_shortcode('[products limit="4" columns="4" orderby="popularity" class="quick-sale" on_sale="true" ]');
-
-    $loop = new WP_Query( $args );?>
-
-    <div style="display:grid;grid-template-columns:<?php echo $numberOfColumns ?>;grid-column-gap:<?php echo $columnGap ?>px;grid-row-gap:<?php echo $columnGap ?>;">
-      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <?php $product = get_product($loop->post); ?>
-        <?php $rating = $product->get_average_rating(); ?>
-        <?php $ratingPercentage = ($rating/5)*100 ?>
-        <?php echo wc_get_product($product->ID); ?>
-        <div style="position:relative;">
-          <?php
-          if ($product->is_on_sale()) {?>
-            <span class="onsale">Sale!</span>
-            <?php
-          } ?>
-          <!-- <?php echo '<pre>' . var_export($product, true) . '</pre>'; ?> -->
-          <?php echo woocommerce_get_product_thumbnail('woocommerce_thumbnail'); ?>
-          <a href="<?php echo get_permalink( $product->ID ) ?>">
-            <?php the_title(); ?>
-          </a>
-          <?php if($rating > 0) { ?>
-              <div class="stars"><div class="stars-inner" style="--w:  <?php echo $ratingPercentage ?>%;"></div></div>
-          <?php } ?>
-          <p>regular price<?php echo $product->get_regular_price(); ?></p>
-          <p>sale price<?php echo $product->get_sale_price(); ?></p>
-          <a href="<?php echo $product->add_to_cart_url() ?>" value="<?php echo esc_attr( $product->get_id() ); ?>" class="ajax_add_to_cart add_to_cart_button" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo esc_attr($sku) ?>"> Add to Cart </a>
-        </div>
-      <?php endwhile;?>
-    </div>
-    <h1>End of widget</h1>
-    <?php wp_reset_query(); // Remember to reset
-
-
-
+    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" orderby="'.$orderBy.'"   ]');
+    ?><h1>fdsfds</h1><?php
 
 
 
