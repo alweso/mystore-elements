@@ -49,18 +49,6 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
       ]
     );
 
-    $this->add_control(
-      'number_of_products',
-      [
-        'label' => __( 'Number of products', 'menheer-plugin' ),
-        'type' => Controls_Manager::NUMBER,
-        'default' => __( 4, 'menheer-plugin' ),
-        'min' => 1,
-        'step' => 1,
-      ]
-    );
-
-
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -152,11 +140,9 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
   /** Render Layout */
   protected function render() {
     $settings = $this->get_settings_for_display();
-    $pickProductBy = $settings['pick_by'];
-    // $numberOfProducts = $settings['number_of_products'];
-
-
-   switch ($pickProductBy) {
+    $pickProductBy = $settings['pick_by'];?>
+    <!-- <h1> fsda<?php echo $pickProductBy; ?> </h1> -->
+    <?php switch ($pickProductBy) {
       case 'latest':
       $args = array(
         'post_type' => 'product',
