@@ -35,21 +35,6 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
     );
 
     $this->add_control(
-      'pick_by', [
-        'label' => __('Pick Products By', 'meta-store-elements'),
-        'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => '',
-        'options'   => [
-          ''      =>esc_html__( 'All', 'menheer-plugin' ),
-          'best_selling="true"'      =>esc_html__( 'Bestsellers', 'menheer-plugin' ),
-          'top_rated="true"'      =>esc_html__( 'Top Rated', 'menheer-plugin' ),
-          'on_sale="true"'      =>esc_html__( 'On Sale', 'menheer-plugin' ),
-          // 'featured'      =>esc_html__( 'Featured', 'menheer-plugin' ),
-        ],
-      ]
-    );
-
-    $this->add_control(
       'choose_categories', [
         'label' => __('Choose Categories', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT2,
@@ -62,11 +47,34 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
     // featured product - // todDo
 
     $this->add_control(
+      'featured',
+      [
+        'label' => esc_html__('Show featured only', 'digiqole'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'featured' => esc_html__('featured', 'digiqole'),
+        'visible' => esc_html__('visible', 'digiqole'),
+        'default' => 'visible',
+      ]
+    );
+
+    $this->add_control(
+      'is_on_sale',
+      [
+        'label' => esc_html__('Show on sale products only', 'digiqole'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'featured' => esc_html__('featured', 'digiqole'),
+        'visible' => esc_html__('visible', 'digiqole'),
+        'default' => 'visible',
+      ]
+    );
+
+    $this->add_control(
       'order_by', [
         'label' => __('Order Products By', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
         'default' => 'title',
         'options'   => [
+          ''      =>esc_html__( '', 'menheer-plugin' ),
           'date'      =>esc_html__( 'Date', 'menheer-plugin' ),
           'id'      =>esc_html__( 'ID', 'menheer-plugin' ),
           'menu_order'      =>esc_html__( 'Menu Order', 'menheer-plugin' ),
@@ -80,13 +88,14 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
 
     $this->add_control(
       'order', [
-        'label' => __('Order Products By', 'meta-store-elements'),
+        'label' => __('Order (ASC/DESC)', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
         'default' => '',
         'options'   => [
           'ASC'      =>esc_html__( 'Ascending', 'menheer-plugin' ),
           'DESC'      =>esc_html__( 'Descending', 'menheer-plugin' ),
         ],
+        'condition' => [ 'order_by' => ['date', 'id', 'menu_order', 'title', 'rand', ''] ]
       ]
     );
 
@@ -222,21 +231,33 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
   /** Render Layout */
   protected function render() {
     $settings = $this->get_settings_for_display();
-    $pickProductBy = $settings['pick_by'];
+
     $chooseCategories = $settings['choose_categories'];
     $orderBy = $settings['order_by'];
     $order = $settings['order'];
+    $featured = $settings['featured'];
+    $is_on_sale = $settings['is_on_sale'];
     $numberOfProducts = $settings['number_of_products'];
     $numberOfColumns = $settings['number_of_columns'];
     $columnGap = $settings['column_gap'];
 
     if (!empty($chooseCategories)) {
-          $categorySlugs = getCategorySlugsFromIds( $chooseCategories );
+      $categorySlugs = getCategorySlugsFromIds( $chooseCategories );
     } else {
       $categorySlugs = '';
-    }
+    };
 
-    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" category="'.$categorySlugs.'" cat_operator="IN" orderby="'.$orderBy.'" order="'.$order.'" '.$pickProductBy.' class="quick-sale" ]');?>
+    $visibility = "visible";
+    if ($featured == "yes") {
+          $visibility = "featured";
+    };
+
+    $onsale = false;
+    if ($is_on_sale == "yes") {
+          $onsale = true;
+    };
+
+    echo do_shortcode('[products limit="'.$numberOfProducts.'" on_sale="'.$onsale.'" visibility="'.$visibility.'" columns="'.$numberOfColumns.'" category="'.$categorySlugs.'" cat_operator="IN" orderby="'.$orderBy.'" order="'.$order.'"]');?>
 
 <?php  }
 }?>
