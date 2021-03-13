@@ -49,13 +49,23 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
       ]
     );
 
-    // choose categories of products - TOdo
+    $this->add_control(
+      'choose_categories', [
+        'label' => __('Choose Categories', 'meta-store-elements'),
+        'type' => \Elementor\Controls_Manager::SELECT2,
+        'default' => '',
+        'multiple' => true,
+        'options'   => my_store_elements_get_woo_categories_list(),
+      ]
+    );
+
+    // featured product - // todDo
 
     $this->add_control(
       'order_by', [
         'label' => __('Order Products By', 'meta-store-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => '',
+        'default' => 'title',
         'options'   => [
           'date'      =>esc_html__( 'Date', 'menheer-plugin' ),
           'id'      =>esc_html__( 'ID', 'menheer-plugin' ),
@@ -64,6 +74,18 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
           'rating'      =>esc_html__( 'Rating', 'menheer-plugin' ),
           'title'      =>esc_html__( 'Name', 'menheer-plugin' ),
           'rand'      =>esc_html__( 'Random', 'menheer-plugin' ),
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'order', [
+        'label' => __('Order Products By', 'meta-store-elements'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => '',
+        'options'   => [
+          'ASC'      =>esc_html__( 'Ascending', 'menheer-plugin' ),
+          'DESC'      =>esc_html__( 'Descending', 'menheer-plugin' ),
         ],
       ]
     );
@@ -84,7 +106,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
       [
         'label' => __( 'Number of columns', 'menheer-plugin' ),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => '1fr 1fr 1fr 1fr',
+        'default' => '4',
         'options'   => [
           '1'      =>esc_html__( '1', 'menheer-plugin' ),
           '2'      =>esc_html__( '2', 'menheer-plugin' ),
@@ -201,12 +223,20 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
   protected function render() {
     $settings = $this->get_settings_for_display();
     $pickProductBy = $settings['pick_by'];
+    $chooseCategories = $settings['choose_categories'];
     $orderBy = $settings['order_by'];
+    $order = $settings['order'];
     $numberOfProducts = $settings['number_of_products'];
     $numberOfColumns = $settings['number_of_columns'];
     $columnGap = $settings['column_gap'];
 
-    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" orderby="'.$orderBy.'" '.$pickProductBy.' class="quick-sale" ]');?>
-    <?php wp_reset_query(); // Remember to reset
-  }
+    if (!empty($chooseCategories)) {
+          $categorySlugs = getCategorySlugsFromIds( $chooseCategories );
+    } else {
+      $categorySlugs = '';
+    }
+
+    echo do_shortcode('[products limit="'.$numberOfProducts.'" columns="'.$numberOfColumns.'" category="'.$categorySlugs.'" cat_operator="IN" orderby="'.$orderBy.'" order="'.$order.'" '.$pickProductBy.' class="quick-sale" ]');?>
+
+<?php  }
 }?>
