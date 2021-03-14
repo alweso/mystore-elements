@@ -122,6 +122,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
           '3'      =>esc_html__( '3', 'menheer-plugin' ),
           '4'      =>esc_html__( '4', 'menheer-plugin' ),
           '5'      =>esc_html__( '5', 'menheer-plugin' ),
+          '6'      =>esc_html__( '6', 'menheer-plugin' ),
         ],
       ]
     );
