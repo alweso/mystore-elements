@@ -125,13 +125,13 @@
          */
         public function i18n() {
 
-            load_plugin_textdomain( 'meta-store-elements' );
+            load_plugin_textdomain( 'storezz-elements' );
 
             /** Include Helper File */
             require_once( __DIR__ . '/inc/helper.php' );
 
-            add_image_size( 'ms-blog-grid-2', 465, 380, true );
-            add_image_size( 'ms-product-cat-large', 600, 600, true );
+            add_image_size( 'storezz-blog-grid-2', 465, 380, true );
+            add_image_size( 'storezz-product-cat-large', 600, 600, true );
         }
 
         /**
@@ -193,9 +193,9 @@
 
             $message = sprintf(
                 /* translators: 1: Plugin name 2: Elementor */
-                esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'meta-store-elements' ),
-                '<strong>' . esc_html__( 'Elementor Test Extension', 'meta-store-elements' ) . '</strong>',
-                '<strong>' . esc_html__( 'Elementor', 'meta-store-elements' ) . '</strong>'
+                esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'storezz-elements' ),
+                '<strong>' . esc_html__( 'Elementor Test Extension', 'storezz-elements' ) . '</strong>',
+                '<strong>' . esc_html__( 'Elementor', 'storezz-elements' ) . '</strong>'
             );
 
             printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -217,9 +217,9 @@
 
             $message = sprintf(
                 /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'meta-store-elements' ),
-                '<strong>' . esc_html__( 'Elementor Test Extension', 'meta-store-elements' ) . '</strong>',
-                '<strong>' . esc_html__( 'Elementor', 'meta-store-elements' ) . '</strong>',
+                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'storezz-elements' ),
+                '<strong>' . esc_html__( 'Elementor Test Extension', 'storezz-elements' ) . '</strong>',
+                '<strong>' . esc_html__( 'Elementor', 'storezz-elements' ) . '</strong>',
                 self::MINIMUM_ELEMENTOR_VERSION
             );
 
@@ -242,9 +242,9 @@
 
             $message = sprintf(
                 /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'meta-store-elements' ),
-                '<strong>' . esc_html__( 'Elementor Test Extension', 'meta-store-elements' ) . '</strong>',
-                '<strong>' . esc_html__( 'PHP', 'meta-store-elements' ) . '</strong>',
+                esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'storezz-elements' ),
+                '<strong>' . esc_html__( 'Elementor Test Extension', 'storezz-elements' ) . '</strong>',
+                '<strong>' . esc_html__( 'PHP', 'storezz-elements' ) . '</strong>',
                 self::MINIMUM_PHP_VERSION
             );
 
@@ -254,7 +254,7 @@
 
         public function add_elementor_styles_and_scripts() {
             /** Custom Widget Styles */
-            wp_enqueue_style( 'meta-store-elements-style', MTSE_ASSETS_URI . 'css/mse-custom-styles.css', array(), MTSE_VERSION );
+            wp_enqueue_style( 'storezz-elements-style', MTSE_ASSETS_URI . 'css/mse-custom-styles.css', array(), MTSE_VERSION );
 
             /** Vendor Scripts & Styles */
 
@@ -272,7 +272,7 @@
             wp_enqueue_script( 'jquery-instagramfeed', MTSE_VENDOR_URI . 'jquery-instagramfeed/jquery.instagramFeed.min.js', array('jquery'), MTSE_VERSION );
 
             /** Custom Widget Scripts */
-            wp_enqueue_script( 'meta-store-elements-scripts', MTSE_ASSETS_URI . 'js/mse-custom-scripts.js', array('jquery'), MTSE_VERSION );
+            wp_enqueue_script( 'storezz-elements-scripts', MTSE_ASSETS_URI . 'js/mse-custom-scripts.js', array('jquery'), MTSE_VERSION );
         }
 
         /**
@@ -280,8 +280,8 @@
          */
         public function add_elementor_widget_categories( $elements_manager ) {
             $elements_manager->add_category(
-                'meta-store-elements', array(
-                    'title' => __( 'My Store Elements', 'meta-store-elements' ),
+                'storezz-elements', array(
+                    'title' => __( 'My Store Elements', 'storezz-elements' ),
                     'icon' => 'fa fa-plug',
                 )
             );
@@ -298,23 +298,23 @@
          */
         public function init_widgets() {
             // Include Widget files
-            require_once( __DIR__ . '/widgets/meta-store-slider-widget.php' ); // Slider
-            require_once( __DIR__ . '/widgets/meta-store-blog-grid1-widget.php' ); // Blog Grid 1
-            require_once( __DIR__ . '/widgets/meta-store-blog-grid2-widget.php' ); // Blog Grid 2
-            require_once( __DIR__ . '/widgets/meta-store-instagram-feed-widget.php' ); // Instagram Feeds
-            require_once( __DIR__ . '/widgets/meta-store-testimonial-slider-widget.php' ); // Testimonial Slider
-            require_once( __DIR__ . '/widgets/meta-store-cta-widget.php' ); // CTA
-            require_once( __DIR__ . '/widgets/meta-store-countdown-widget.php' ); // Countdown
-            require_once( __DIR__ . '/widgets/meta-store-vertical-menu-widget.php' ); // Menu
+            require_once( __DIR__ . '/widgets/storezz-slider-widget.php' ); // Slider
+            require_once( __DIR__ . '/widgets/storezz-blog-grid1-widget.php' ); // Blog Grid 1
+            require_once( __DIR__ . '/widgets/storezz-blog-grid2-widget.php' ); // Blog Grid 2
+            require_once( __DIR__ . '/widgets/storezz-instagram-feed-widget.php' ); // Instagram Feeds
+            require_once( __DIR__ . '/widgets/storezz-testimonial-slider-widget.php' ); // Testimonial Slider
+            require_once( __DIR__ . '/widgets/storezz-cta-widget.php' ); // CTA
+            require_once( __DIR__ . '/widgets/storezz-countdown-widget.php' ); // Countdown
+            require_once( __DIR__ . '/widgets/storezz-vertical-menu-widget.php' ); // Menu
 
             if( class_exists( 'woocommerce' ) ) {
-                require_once( __DIR__ . '/widgets/meta-store-product-tabs-grid-widget.php' ); // Product Tabs Grid
-                require_once( __DIR__ . '/widgets/meta-store-product-list-widget.php' ); // Product List
-                require_once( __DIR__ . '/widgets/meta-store-product-category-block1-widget.php' ); // Product Category Block 1
-                require_once( __DIR__ . '/widgets/meta-store-product-category-block2-widget.php' ); // Product Category Block 2
-                require_once( __DIR__ . '/widgets/meta-store-product-slider-widget.php' ); // Product Slider
-                require_once( __DIR__ . '/widgets/meta-store-category-grid-widget.php' ); // Category Grid
-                require_once( __DIR__ . '/widgets/meta-store-product-grid-widget.php' ); // Category Grid
+                require_once( __DIR__ . '/widgets/storezz-product-tabs-grid-widget.php' ); // Product Tabs Grid
+                require_once( __DIR__ . '/widgets/storezz-product-list-widget.php' ); // Product List
+                require_once( __DIR__ . '/widgets/storezz-product-category-block1-widget.php' ); // Product Category Block 1
+                require_once( __DIR__ . '/widgets/storezz-product-category-block2-widget.php' ); // Product Category Block 2
+                require_once( __DIR__ . '/widgets/storezz-product-slider-widget.php' ); // Product Slider
+                require_once( __DIR__ . '/widgets/storezz-category-grid-widget.php' ); // Category Grid
+                require_once( __DIR__ . '/widgets/storezz-product-grid-widget.php' ); // Category Grid
             }
 
             // Register widget
@@ -357,10 +357,10 @@
             require_once( __DIR__ . '/inc/controls/groups/group-control-header-style.php' );
 
             // Register control
-            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'meta-store-header', new Group_Control_Header() );
-            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'meta-store-header-style', new Group_Control_Header_Style() );
-            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'meta-store-pquery', new Group_Control_Produt_Query() );
-            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'meta-store-extra', new Group_Control_Extra() );
+            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'storezz-header', new Group_Control_Header() );
+            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'storezz-header-style', new Group_Control_Header_Style() );
+            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'storezz-pquery', new Group_Control_Produt_Query() );
+            \Elementor\Plugin::instance()->controls_manager->add_group_control( 'storezz-extra', new Group_Control_Extra() );
 
         }
 

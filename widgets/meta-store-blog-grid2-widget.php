@@ -6,12 +6,12 @@
 
         /** Widget Name */
         public function get_name() {
-            return 'ms-blog-grid2-widget';
+            return 'storezz-blog-grid2-widget';
         }
 
         /** Widget Title */
         public function get_title() {
-            return __( 'Blog Grid 2', 'meta-store-elements' );
+            return __( 'Blog Grid 2', 'storezz-elements' );
         }
 
         /** Icon */
@@ -21,7 +21,7 @@
 
         /** Category */
         public function get_categories() {
-            return [ 'meta-store-elements' ];
+            return [ 'storezz-elements' ];
         }
 
         /** Controls */
@@ -29,7 +29,7 @@
             $this->start_controls_section(
                 'content_section',
                 [
-                    'label' => __( 'Content', 'meta-store-elements' ),
+                    'label' => __( 'Content', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -37,7 +37,7 @@
                 $this->add_control(
                     'no_of_posts',
                     [
-                        'label' => __( 'No. of Posts', 'meta-store-elements' ),
+                        'label' => __( 'No. of Posts', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'no' ],
                         'range' => [
@@ -60,7 +60,7 @@
                 $this->add_control(
                     'posts',
                     [
-                        'label' => __( 'Posts', 'meta-store-elements' ),
+                        'label' => __( 'Posts', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT2,
                         'multiple' => true,
                         'options' => My_Store_elements_post_lists( $multiple = true ),
@@ -71,7 +71,7 @@
                 $this->add_control(
                     'orderby',
                     [
-                        'label' => __( 'Order By', 'meta-store-elements' ),
+                        'label' => __( 'Order By', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'date',
                         'options' => My_Store_elements_orderby_list(),
@@ -81,7 +81,7 @@
                 $this->add_control(
                     'order',
                     [
-                        'label' => __( 'Order', 'meta-store-elements' ),
+                        'label' => __( 'Order', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'ASC',
                         'options' => My_Store_elements_order_list(),
@@ -91,10 +91,10 @@
                 $this->add_control(
                     'show_category',
                     [
-                        'label' => __( 'Show Category', 'meta-store-elements' ),
+                        'label' => __( 'Show Category', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -103,10 +103,10 @@
                 $this->add_control(
                     'show_author',
                     [
-                        'label' => __( 'Show Author', 'meta-store-elements' ),
+                        'label' => __( 'Show Author', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -115,10 +115,10 @@
                 $this->add_control(
                     'show_date',
                     [
-                        'label' => __( 'Show Date', 'meta-store-elements' ),
+                        'label' => __( 'Show Date', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -127,7 +127,7 @@
                 $this->add_control(
                     'excerpt_length',
                     [
-                        'label' => __( 'Excerpt Length', 'meta-store-elements' ),
+                        'label' => __( 'Excerpt Length', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'chars' ],
                         'range' => [
@@ -147,10 +147,10 @@
                 $this->add_control(
                     'readmore_text',
                     [
-                        'label' => __( 'Readmore Text', 'meta-store-elements' ),
+                        'label' => __( 'Readmore Text', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'Read More', 'meta-store-elements' ),
-                        'placeholder' => __( 'Type your title here', 'meta-store-elements' ),
+                        'default' => __( 'Read More', 'storezz-elements' ),
+                        'placeholder' => __( 'Type your title here', 'storezz-elements' ),
                     ]
                 );
 
@@ -159,7 +159,7 @@
             $this->start_controls_section(
                 'extra_section',
                 [
-                    'label' => __( 'Additional Settings', 'meta-store-elements' ),
+                    'label' => __( 'Additional Settings', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -167,7 +167,7 @@
                 $this->add_control(
                     'image_height',
                     [
-                        'label' => __( 'Height', 'meta-store-elements' ),
+                        'label' => __( 'Height', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -182,7 +182,7 @@
                             'size' => 360,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 li .post-image' => 'height: {{SIZE}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-blog-grid2 li .post-image' => 'height: {{SIZE}}{{UNIT}};',
                         ],
                     ]
                 );
@@ -190,7 +190,7 @@
                 $this->add_control(
                     'image_size',
                     [
-                        'label' => __( 'Image Size', 'meta-store-elements' ),
+                        'label' => __( 'Image Size', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'medium',
                         'options' => My_Store_elements_imagesizes_list(),
@@ -200,14 +200,14 @@
                 $this->add_control(
                     'color_scheme',
                     [
-                        'label' => __( 'Color Scheme', 'meta-store-elements' ),
+                        'label' => __( 'Color Scheme', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .post-title a:hover, {{WRAPPER}} .ms-blog-grid2 .post-content .readmore-btn:hover' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title a:hover, {{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn:hover' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -217,7 +217,7 @@
             $this->start_controls_section(
                 'category_style',
                 [
-                    'label' => __( 'Category Text', 'meta-store-elements' ),
+                    'label' => __( 'Category Text', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -225,14 +225,14 @@
                 $this->add_control(
                     'category_bgcolor',
                     [
-                        'label' => __( 'Background Color', 'meta-store-elements' ),
+                        'label' => __( 'Background Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .categories a' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .categories a' => 'background-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -240,14 +240,14 @@
                 $this->add_control(
                     'category_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .categories a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .categories a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -256,9 +256,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'category_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-blog-grid2 .categories a',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .categories a',
                     ]
                 );
 
@@ -267,7 +267,7 @@
             $this->start_controls_section(
                 'author_style',
                 [
-                    'label' => __( 'Author & Date', 'meta-store-elements' ),
+                    'label' => __( 'Author & Date', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -275,14 +275,14 @@
                 $this->add_control(
                     'author_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .post-metas' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-metas' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -291,9 +291,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'author_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-blog-grid2 .post-content .post-metas',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-metas',
                     ]
                 );
 
@@ -302,7 +302,7 @@
             $this->start_controls_section(
                 'title_style',
                 [
-                    'label' => __( 'Title Text', 'meta-store-elements' ),
+                    'label' => __( 'Title Text', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -310,14 +310,14 @@
                 $this->add_control(
                     'title_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .post-title a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -326,21 +326,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'title_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-blog-grid2 .post-content .post-title',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title',
                     ]
                 );
 
                 $this->add_control(
                     'title_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -350,7 +350,7 @@
             $this->start_controls_section(
                 'excerpt_style',
                 [
-                    'label' => __( 'Excerpt', 'meta-store-elements' ),
+                    'label' => __( 'Excerpt', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -358,14 +358,14 @@
                 $this->add_control(
                     'excerpt_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .excerpt' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -374,21 +374,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'excerpt_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-blog-grid2 .post-content .excerpt',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt',
                     ]
                 );
 
                 $this->add_control(
                     'excerpt_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -398,7 +398,7 @@
             $this->start_controls_section(
                 'readmore_style',
                 [
-                    'label' => __( 'Readmore', 'meta-store-elements' ),
+                    'label' => __( 'Readmore', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -406,14 +406,14 @@
                 $this->add_control(
                     'readmore_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .readmore-btn' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -422,21 +422,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'readmore_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-blog-grid2 .post-content .readmore-btn',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn',
                     ]
                 );
 
                 $this->add_control(
                     'readmore_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-blog-grid2 .post-content .readmore-btn' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -454,7 +454,7 @@
             $orderby = isset( $settings['orderby'] ) ? $settings['orderby'] : 'date';
             $order = isset( $settings['order'] ) ? $settings['order'] : 'ASC';
             $posts = isset( $settings['posts'] ) ? $settings['posts'] : array( 'all' );
-            $readmore_text = isset( $settings['readmore_text'] ) ? $settings['readmore_text'] : esc_html('Read More', 'meta-store-elements');
+            $readmore_text = isset( $settings['readmore_text'] ) ? $settings['readmore_text'] : esc_html('Read More', 'storezz-elements');
             $image_size = isset( $settings['image_size'] ) ? $settings['image_size'] : 'medium';
             $show_category = ( $settings['show_category'] == 'yes' ) ? true : false;
             $show_date = ( $settings['show_date'] == 'yes' ) ? true : false;
@@ -474,7 +474,7 @@
             $post_query = new WP_Query( $args );
             ?>
                 <?php if( $post_query->have_posts() ) : ?>
-                    <ul class="ms-blog-grid2" id="ms-blog-grid2-<?php echo esc_attr( $this->get_id() ) ?>">
+                    <ul class="storezz-blog-grid2" id="storezz-blog-grid2-<?php echo esc_attr( $this->get_id() ) ?>">
                         <?php while( $post_query->have_posts() ) : $post_query->the_post(); ?>
                             <?php if( has_post_thumbnail() ) : ?>
                                 <li>

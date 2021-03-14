@@ -2,11 +2,11 @@
     class My_Store_Testimonial_Slider_Widget extends \Elementor\Widget_Base {
 
         public function get_name() {
-            return 'ms-testimonial-slider';
+            return 'storezz-testimonial-slider';
         }
 
         public function get_title() {
-            return esc_html__( 'Testimonial Slider', 'meta-store-elements' );
+            return esc_html__( 'Testimonial Slider', 'storezz-elements' );
         }
 
         public function get_icon() {
@@ -14,7 +14,7 @@
         }
 
         public function get_categories() {
-            return [ 'meta-store-elements' ];
+            return [ 'storezz-elements' ];
         }
 
         public function get_script_depends() {
@@ -26,7 +26,7 @@
             $this->start_controls_section(
                 'testimonial_section',
                 [
-                    'label' => __( 'Testimonial', 'meta-store-elements' ),
+                    'label' => __( 'Testimonial', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -36,7 +36,7 @@
                 $repeater->add_control(
                     'image',
                     [
-                        'label' => __( 'Choose Image', 'meta-store-elements' ),
+                        'label' => __( 'Choose Image', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::MEDIA,
                         'default' => [
                             'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -46,27 +46,27 @@
 
                 $repeater->add_control(
                     'name', [
-                        'label' => __( 'Client Name', 'meta-store-elements' ),
+                        'label' => __( 'Client Name', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'John Doe' , 'meta-store-elements' ),
+                        'default' => __( 'John Doe' , 'storezz-elements' ),
                         'label_block' => true,
                     ]
                 );
 
                 $repeater->add_control(
                     'designation', [
-                        'label' => __( 'Designation', 'meta-store-elements' ),
+                        'label' => __( 'Designation', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'Managing Director' , 'meta-store-elements' ),
+                        'default' => __( 'Managing Director' , 'storezz-elements' ),
                         'label_block' => true,
                     ]
                 );
 
                 $repeater->add_control(
                     'testimony', [
-                        'label' => __( 'Testimony', 'meta-store-elements' ),
+                        'label' => __( 'Testimony', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXTAREA,
-                        'default' => __( 'John Doe has to say something about the co.' , 'meta-store-elements' ),
+                        'default' => __( 'John Doe has to say something about the co.' , 'storezz-elements' ),
                         'show_label' => false,
                     ]
                 );
@@ -74,16 +74,16 @@
                 $repeater->add_control(
                     'star_ratings',
                     [
-                        'label' => __( 'Ratings', 'meta-store-elements' ),
+                        'label' => __( 'Ratings', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => '0',
                         'options' => [
-                            '0'  => __( '0 Star', 'meta-store-elements' ),
-                            '1' => __( '1 Star', 'meta-store-elements' ),
-                            '2' => __( '2 Star', 'meta-store-elements' ),
-                            '3' => __( '3 Star', 'meta-store-elements' ),
-                            '4' => __( '4 Star', 'meta-store-elements' ),
-                            '5' => __( '5 Star', 'meta-store-elements' ),
+                            '0'  => __( '0 Star', 'storezz-elements' ),
+                            '1' => __( '1 Star', 'storezz-elements' ),
+                            '2' => __( '2 Star', 'storezz-elements' ),
+                            '3' => __( '3 Star', 'storezz-elements' ),
+                            '4' => __( '4 Star', 'storezz-elements' ),
+                            '5' => __( '5 Star', 'storezz-elements' ),
                         ],
                     ]
                 );
@@ -91,19 +91,19 @@
                 $this->add_control(
                     'testimonials',
                     [
-                        'label' => __( 'Testimonials', 'meta-store-elements' ),
+                        'label' => __( 'Testimonials', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::REPEATER,
                         'fields' => $repeater->get_controls(),
                         'default' => [
                             [
-                                'name' => __( 'John Doe', 'meta-store-elements' ),
-                                'designation' => __( 'Managing Director', 'meta-store-elements' ),
-                                'testimony' => __( 'John Doe has to say something about the business.', 'meta-store-elements' ),
+                                'name' => __( 'John Doe', 'storezz-elements' ),
+                                'designation' => __( 'Managing Director', 'storezz-elements' ),
+                                'testimony' => __( 'John Doe has to say something about the business.', 'storezz-elements' ),
                             ],
                             [
-                                'name' => __( 'Sarah Doe', 'meta-store-elements' ),
-                                'designation' => __( 'Blogger', 'meta-store-elements' ),
-                                'testimony' => __( 'Sarah has to say something about the business.', 'meta-store-elements' ),
+                                'name' => __( 'Sarah Doe', 'storezz-elements' ),
+                                'designation' => __( 'Blogger', 'storezz-elements' ),
+                                'testimony' => __( 'Sarah has to say something about the business.', 'storezz-elements' ),
                             ],
                         ],
                         'title_field' => '{{{ name }}}',
@@ -115,7 +115,7 @@
             $this->start_controls_section(
                 'testimonial_carousel_section',
                 [
-                    'label' => __( 'Carousel', 'meta-store-elements' ),
+                    'label' => __( 'Carousel', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -123,10 +123,10 @@
                 $this->add_control(
                     'loop',
                     [
-                        'label' => __( 'Loop Slides', 'meta-store-elements' ),
+                        'label' => __( 'Loop Slides', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Yes', 'meta-store-elements' ),
-                        'label_off' => __( 'No', 'meta-store-elements' ),
+                        'label_on' => __( 'Yes', 'storezz-elements' ),
+                        'label_off' => __( 'No', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -135,10 +135,10 @@
                 $this->add_control(
                     'autoplay',
                     [
-                        'label' => __( 'Autoplay', 'meta-store-elements' ),
+                        'label' => __( 'Autoplay', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Yes', 'meta-store-elements' ),
-                        'label_off' => __( 'No', 'meta-store-elements' ),
+                        'label_on' => __( 'Yes', 'storezz-elements' ),
+                        'label_off' => __( 'No', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -147,10 +147,10 @@
                 $this->add_control(
                     'pause_on_hover',
                     [
-                        'label' => __( 'Pause On Hover', 'meta-store-elements' ),
+                        'label' => __( 'Pause On Hover', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Yes', 'meta-store-elements' ),
-                        'label_off' => __( 'No', 'meta-store-elements' ),
+                        'label_on' => __( 'Yes', 'storezz-elements' ),
+                        'label_off' => __( 'No', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -159,10 +159,10 @@
                 $this->add_control(
                     'show_dots',
                     [
-                        'label' => __( 'Show Dots', 'meta-store-elements' ),
+                        'label' => __( 'Show Dots', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Yes', 'meta-store-elements' ),
-                        'label_off' => __( 'No', 'meta-store-elements' ),
+                        'label_on' => __( 'Yes', 'storezz-elements' ),
+                        'label_off' => __( 'No', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                     ]
@@ -173,7 +173,7 @@
             $this->start_controls_section(
                 'testimonial_name_style',
                 [
-                    'label' => __( 'Client Name', 'meta-store-elements' ),
+                    'label' => __( 'Client Name', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -181,14 +181,14 @@
                 $this->add_control(
                     'name_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .name-designation .name' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-testimonial-slider .name-designation .name' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -197,9 +197,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'name_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-testimonial-slider .name-designation .name',
+                        'selector' => '{{WRAPPER}} .storezz-testimonial-slider .name-designation .name',
                     ]
                 );
 
@@ -208,7 +208,7 @@
             $this->start_controls_section(
                 'testimonial_testimony_style',
                 [
-                    'label' => __( 'Testimony', 'meta-store-elements' ),
+                    'label' => __( 'Testimony', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -216,14 +216,14 @@
                 $this->add_control(
                     'testimony_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .testimonial .testimony' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-testimonial-slider .testimonial .testimony' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -232,21 +232,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'testimony_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-testimonial-slider .testimonial .testimony',
+                        'selector' => '{{WRAPPER}} .storezz-testimonial-slider .testimonial .testimony',
                     ]
                 );
 
                 $this->add_control(
                     'testimony_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .testimonial .testimony' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-testimonial-slider .testimonial .testimony' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -256,7 +256,7 @@
             $this->start_controls_section(
                 'testimonial_designation_style',
                 [
-                    'label' => __( 'Designation', 'meta-store-elements' ),
+                    'label' => __( 'Designation', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -264,14 +264,14 @@
                 $this->add_control(
                     'design_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .name-designation .designation' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-testimonial-slider .name-designation .designation' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -280,9 +280,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'design_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-testimonial-slider .name-designation .designation',
+                        'selector' => '{{WRAPPER}} .storezz-testimonial-slider .name-designation .designation',
                     ]
                 );
 
@@ -291,7 +291,7 @@
             $this->start_controls_section(
                 'testimonial_ratings_style',
                 [
-                    'label' => __( 'Star Ratings', 'meta-store-elements' ),
+                    'label' => __( 'Star Ratings', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -299,7 +299,7 @@
                 $this->add_control(
                     'ratings_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
@@ -307,7 +307,7 @@
                         ],
                         'default' => '#ffffff',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .star-ratings' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-testimonial-slider .star-ratings' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -315,14 +315,14 @@
                 $this->add_control(
                     'ratings_size',
                     [
-                        'label' => __( 'Size', 'meta-store-elements' ),
+                        'label' => __( 'Size', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::NUMBER,
                         'min' => 5,
                         'max' => 100,
                         'step' => 1,
                         'default' => 10,
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .star-ratings span' => 'font-size: {{VALUE}}px'
+                            '{{WRAPPER}} .storezz-testimonial-slider .star-ratings span' => 'font-size: {{VALUE}}px'
                         ],
                     ]
                 );
@@ -332,7 +332,7 @@
             $this->start_controls_section(
                 'testimonial_dots_style',
                 [
-                    'label' => __( 'Dots', 'meta-store-elements' ),
+                    'label' => __( 'Dots', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -340,7 +340,7 @@
                 $this->add_control(
                     'dots_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
@@ -348,7 +348,7 @@
                         ],
                         'default' => '#ffffff',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider button.owl-dot' => 'background-color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-testimonial-slider button.owl-dot' => 'background-color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -356,14 +356,14 @@
                 $this->add_control(
                     'dots_height',
                     [
-                        'label' => __( 'Thickness', 'meta-store-elements' ),
+                        'label' => __( 'Thickness', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::NUMBER,
                         'min' => 1,
                         'max' => 10,
                         'step' => 1,
                         'default' => 2,
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider button.owl-dot' => 'height: {{VALUE}}px'
+                            '{{WRAPPER}} .storezz-testimonial-slider button.owl-dot' => 'height: {{VALUE}}px'
                         ],
                     ]
                 );
@@ -371,12 +371,12 @@
                 $this->add_control(
                     'dots_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-testimonial-slider .owl-dots' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-testimonial-slider .owl-dots' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -392,7 +392,7 @@
 
             if( !empty( $testimonials ) ) :
             ?>
-                <div data-carousel-options='{"autoplay":"true","items":"2","loop":"true","nav":"true"}' class="ms-testimonial-slider owl-carousel" id="ms-testimonial-slider-<?php echo esc_attr( $this->get_id() ); ?>">
+                <div data-carousel-options='{"autoplay":"true","items":"2","loop":"true","nav":"true"}' class="storezz-testimonial-slider owl-carousel" id="storezz-testimonial-slider-<?php echo esc_attr( $this->get_id() ); ?>">
 
                     <?php foreach( $testimonials as $testimonial ) : ?>
                         <div class="testimonial">
@@ -418,7 +418,7 @@
                             <div class="name-design">
                                 <?php if( $testimonial['image'] ) : ?>
                                     <?php
-                                        $img = wp_get_attachment_image_src( $testimonial['image']['id'], 'ms-testimonial-slider' );
+                                        $img = wp_get_attachment_image_src( $testimonial['image']['id'], 'storezz-testimonial-slider' );
                                         $img_src = $img ? $img[0] : $testimonial['image']['url'];
                                         $img_alt = get_post_meta( $testimonial['image']['id'], '_wp_attachment_image_alt', true );
                                     ?>

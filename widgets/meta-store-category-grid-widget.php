@@ -7,12 +7,12 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'ms-product-category-grid-widget';
+        return 'storezz-product-category-grid-widget';
     }
 
     /** Widget Title */
     public function get_title() {
-        return __('Product Category Grid', 'meta-store-elements');
+        return __('Product Category Grid', 'storezz-elements');
     }
 
     /** Icon */
@@ -22,21 +22,21 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
     /** Category */
     public function get_categories() {
-        return ['meta-store-elements'];
+        return ['storezz-elements'];
     }
 
     /** Controls */
     protected function _register_controls() {
         $this->start_controls_section(
                 'content_section', [
-            'label' => __('Content', 'meta-store-elements'),
+            'label' => __('Content', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
             'product_categories', [
-            'label' => __('Category 1', 'meta-store-elements'),
+            'label' => __('Category 1', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT2,
             'multiple' => true,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -48,14 +48,14 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
         $this->start_controls_section(
                 'additional_settings', [
-            'label' => __('Additional Settings', 'meta-store-elements'),
+            'label' => __('Additional Settings', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
                 'image_size_label', [
-            'label' => __('Image Size', 'meta-store-elements'),
+            'label' => __('Image Size', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::HEADING,
                 ]
         );
@@ -71,14 +71,14 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'color_scheme', [
-            'label' => __('Color Scheme', 'meta-store-elements'),
+            'label' => __('Color Scheme', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block1 .cat-btn:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block1 .cat-btn:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -87,35 +87,35 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
 
         $this->start_controls_section(
                 'cat_btn_style', [
-            'label' => __('Category Button', 'meta-store-elements'),
+            'label' => __('Category Button', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
                 'cat_btn_bgcolor', [
-            'label' => __('Background', 'meta-store-elements'),
+            'label' => __('Background', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block1 .cat-btn:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block1 .cat-btn:hover' => 'background-color: {{VALUE}}',
             ],
                 ]
         );
 
         $this->add_control(
                 'cat_btn_color', [
-            'label' => __('Text Color', 'meta-store-elements'),
+            'label' => __('Text Color', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block1 .cat-btn' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block1 .cat-btn' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -123,9 +123,9 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
         $this->add_group_control(
                 \Elementor\Group_Control_Typography::get_type(), [
             'name' => 'cat_btn_typography',
-            'label' => __('Typography', 'meta-store-elements'),
+            'label' => __('Typography', 'storezz-elements'),
             'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .ms-product-category-block1 .cat-btn',
+            'selector' => '{{WRAPPER}} .storezz-product-category-block1 .cat-btn',
                 ]
         );
 
@@ -137,7 +137,7 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
         $settings = $this->get_settings_for_display();
         $categories = $settings['product_categories'];
         ?>
-        <div class="ms-product-category-grid"  style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
+        <div class="storezz-product-category-grid"  style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr">
           <?php foreach( $categories as $category ) {?>
             <div>
               <?php

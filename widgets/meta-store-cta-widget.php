@@ -2,12 +2,12 @@
 class My_Store_Cta_Widget extends \Elementor\Widget_Base {
     /** Widget Name **/
     public function get_name() {
-        return 'ms-cta';
+        return 'storezz-cta';
     }
 
     /** Widget Title **/
     public function get_title() {
-        return esc_html__( 'Call To Action', 'meta-store-elements' );
+        return esc_html__( 'Call To Action', 'storezz-elements' );
     }
 
     /** Widget Icon **/
@@ -17,7 +17,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
 
     /** Categories **/
     public function get_categories() {
-        return [ 'meta-store-elements' ];
+        return [ 'storezz-elements' ];
     }
 
     /** Widget Controls **/
@@ -26,7 +26,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'cta_content_section',
             [
-                'label' => __( 'CTA', 'meta-store-elements' ),
+                'label' => __( 'CTA', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -45,17 +45,17 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'title',
                 [
-                    'label' => __( 'Title', 'meta-store-elements' ),
+                    'label' => __( 'Title', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'separator' => 'before',
-                    'default' => __( 'Title', 'meta-store-elements' ),
+                    'default' => __( 'Title', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'title_tag',
                 [
-                    'label' => __( 'Title Tag', 'meta-store-elements' ),
+                    'label' => __( 'Title Tag', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'h3',
                     'options' => My_Store_elements_tag_lists(),
@@ -65,18 +65,18 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'subtitle',
                 [
-                    'label' => __( 'Sub Title', 'meta-store-elements' ),
+                    'label' => __( 'Sub Title', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Sub Title', 'meta-store-elements' ),
+                    'default' => __( 'Sub Title', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'button_text',
                 [
-                    'label' => __( 'Button Text', 'meta-store-elements' ),
+                    'label' => __( 'Button Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Discover Now', 'meta-store-elements' ),
+                    'default' => __( 'Discover Now', 'storezz-elements' ),
                     'separator' => 'before',
                 ]
             );
@@ -84,9 +84,9 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'button_link',
                 [
-                    'label' => __( 'Button Link', 'meta-store-elements' ),
+                    'label' => __( 'Button Link', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::URL,
-                    'placeholder' => __( '#', 'meta-store-elements' ),
+                    'placeholder' => __( '#', 'storezz-elements' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '',
@@ -101,7 +101,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'cta_additional_section',
             [
-                'label' => __( 'Additional Settings', 'meta-store-elements' ),
+                'label' => __( 'Additional Settings', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -109,19 +109,19 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'content_position',
                 [
-                    'label' => __( 'Content Position', 'meta-store-elements' ),
+                    'label' => __( 'Content Position', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'center-center',
                     'options' => array(
-                        'top-left' => __( 'Top Left', 'meta-store-elements' ),
-                        'top-center' => __( 'Top Center', 'meta-store-elements' ),
-                        'top-right' => __( 'Top Right', 'meta-store-elements' ),
-                        'center-left' => __( 'Center Left', 'meta-store-elements' ),
-                        'center-center' => __( 'Center Center', 'meta-store-elements' ),
-                        'center-right' => __( 'Center Right', 'meta-store-elements' ),
-                        'bottom-left' => __( 'Bottom Left', 'meta-store-elements' ),
-                        'bottom-center' => __( 'Bottom Center', 'meta-store-elements' ),
-                        'bottom-right' => __( 'Bottom Right', 'meta-store-elements' ),
+                        'top-left' => __( 'Top Left', 'storezz-elements' ),
+                        'top-center' => __( 'Top Center', 'storezz-elements' ),
+                        'top-right' => __( 'Top Right', 'storezz-elements' ),
+                        'center-left' => __( 'Center Left', 'storezz-elements' ),
+                        'center-center' => __( 'Center Center', 'storezz-elements' ),
+                        'center-right' => __( 'Center Right', 'storezz-elements' ),
+                        'bottom-left' => __( 'Bottom Left', 'storezz-elements' ),
+                        'bottom-center' => __( 'Bottom Center', 'storezz-elements' ),
+                        'bottom-right' => __( 'Bottom Right', 'storezz-elements' ),
                     ),
                 ]
             );
@@ -129,7 +129,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'image_height',
                 [
-                    'label' => __( 'Image Height', 'meta-store-elements' ),
+                    'label' => __( 'Image Height', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -144,7 +144,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                         'size' => 250,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-cta' => 'height: {{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .storezz-cta' => 'height: {{SIZE}}{{UNIT}};',
                     ],
                 ]
             );
@@ -162,12 +162,12 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'hover_effect',
                 [
-                    'label' => __( 'Hover Effect', 'meta-store-elements' ),
+                    'label' => __( 'Hover Effect', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'hover1',
                     'options' => array(
-                        'hover1' => __( 'Expansion', 'meta-store-elements' ),
-                        'hover2' => __( 'Slice', 'meta-store-elements' ),
+                        'hover1' => __( 'Expansion', 'storezz-elements' ),
+                        'hover2' => __( 'Slice', 'storezz-elements' ),
                     ),
                 ]
             );
@@ -177,7 +177,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'title_style',
             [
-                'label' => __( 'Title', 'meta-store-elements' ),
+                'label' => __( 'Title', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -185,14 +185,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => __( 'Color', 'meta-store-elements' ),
+                    'label' => __( 'Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-cta .content .title' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-cta .content .title' => 'color: {{VALUE}}',
                     ],
                 ]
             );
@@ -201,9 +201,9 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'meta-store-elements' ),
+                    'label' => __( 'Typography', 'storezz-elements' ),
                     'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .ms-cta .content .title',
+                    'selector' => '{{WRAPPER}} .storezz-cta .content .title',
                 ]
             );
 
@@ -215,7 +215,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     'size_units' => [ 'px' ],
                     'allowed_dimensions' => 'vertical',
                     'selectors' => [
-                        '{{WRAPPER}} .ms-cta .content .title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                        '{{WRAPPER}} .storezz-cta .content .title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                     ],
                 ]
             );
@@ -225,7 +225,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'subtitle_style',
             [
-                'label' => __( 'Sub-Title', 'meta-store-elements' ),
+                'label' => __( 'Sub-Title', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -233,14 +233,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'subtitle_color',
                 [
-                    'label' => __( 'Color', 'meta-store-elements' ),
+                    'label' => __( 'Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-cta .content .subtitle' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-cta .content .subtitle' => 'color: {{VALUE}}',
                     ],
                 ]
             );
@@ -249,9 +249,9 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'subtitle_typography',
-                    'label' => __( 'Typography', 'meta-store-elements' ),
+                    'label' => __( 'Typography', 'storezz-elements' ),
                     'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .ms-cta .content .subtitle',
+                    'selector' => '{{WRAPPER}} .storezz-cta .content .subtitle',
                 ]
             );
 
@@ -260,7 +260,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'button_style',
             [
-                'label' => __( 'Button', 'meta-store-elements' ),
+                'label' => __( 'Button', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -268,11 +268,11 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'button_padding',
                 [
-                    'label' => __( 'Padding', 'meta-store-elements' ),
+                    'label' => __( 'Padding', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px' ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-cta .content .btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .storezz-cta .content .btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -281,9 +281,9 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'button_typography',
-                    'label' => __( 'Typography', 'meta-store-elements' ),
+                    'label' => __( 'Typography', 'storezz-elements' ),
                     'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .ms-cta .content .btn',
+                    'selector' => '{{WRAPPER}} .storezz-cta .content .btn',
                 ]
             );
 
@@ -294,7 +294,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                 $this->start_controls_tab(
                     'buttons_normal_tab',
                     [
-                        'label' => __( 'Normal', 'meta-store-elements' ),
+                        'label' => __( 'Normal', 'storezz-elements' ),
                     ]
                 );
 
@@ -302,14 +302,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     $this->add_control(
                         'button_color_normal',
                         [
-                            'label' => __( 'Color', 'meta-store-elements' ),
+                            'label' => __( 'Color', 'storezz-elements' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'scheme' => [
                                 'type' => \Elementor\Scheme_Color::get_type(),
                                 'value' => \Elementor\Scheme_Color::COLOR_1,
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .ms-cta .content .btn' => 'color: {{VALUE}}',
+                                '{{WRAPPER}} .storezz-cta .content .btn' => 'color: {{VALUE}}',
                             ],
                         ]
                     );
@@ -317,14 +317,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     $this->add_control(
                         'button_bgcolor_normal',
                         [
-                            'label' => __( 'Background Color', 'meta-store-elements' ),
+                            'label' => __( 'Background Color', 'storezz-elements' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'scheme' => [
                                 'type' => \Elementor\Scheme_Color::get_type(),
                                 'value' => \Elementor\Scheme_Color::COLOR_1,
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .ms-cta .content .btn' => 'background-color: {{VALUE}}',
+                                '{{WRAPPER}} .storezz-cta .content .btn' => 'background-color: {{VALUE}}',
                             ],
                         ]
                     );
@@ -333,8 +333,8 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'normal_border',
-                            'label' => __( 'Border', 'meta-store-elements' ),
-                            'selector' => '{{WRAPPER}} .ms-cta .content .btn',
+                            'label' => __( 'Border', 'storezz-elements' ),
+                            'selector' => '{{WRAPPER}} .storezz-cta .content .btn',
                         ]
                     );
 
@@ -343,7 +343,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                 $this->start_controls_tab(
                     'buttons_hover_tab',
                     [
-                        'label' => __( 'Hover', 'meta-store-elements' ),
+                        'label' => __( 'Hover', 'storezz-elements' ),
                     ]
                 );
 
@@ -351,14 +351,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     $this->add_control(
                         'button_color_hover',
                         [
-                            'label' => __( 'Color', 'meta-store-elements' ),
+                            'label' => __( 'Color', 'storezz-elements' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'scheme' => [
                                 'type' => \Elementor\Scheme_Color::get_type(),
                                 'value' => \Elementor\Scheme_Color::COLOR_1,
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .ms-cta .content .btn:hover' => 'color: {{VALUE}}',
+                                '{{WRAPPER}} .storezz-cta .content .btn:hover' => 'color: {{VALUE}}',
                             ],
                         ]
                     );
@@ -366,14 +366,14 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     $this->add_control(
                         'button_bgcolor_hover',
                         [
-                            'label' => __( 'Background Color', 'meta-store-elements' ),
+                            'label' => __( 'Background Color', 'storezz-elements' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'scheme' => [
                                 'type' => \Elementor\Scheme_Color::get_type(),
                                 'value' => \Elementor\Scheme_Color::COLOR_1,
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .ms-cta .content .btn:hover' => 'background-color: {{VALUE}}',
+                                '{{WRAPPER}} .storezz-cta .content .btn:hover' => 'background-color: {{VALUE}}',
                             ],
                         ]
                     );
@@ -382,8 +382,8 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'hover_border',
-                            'label' => __( 'Border', 'meta-store-elements' ),
-                            'selector' => '{{WRAPPER}} .ms-cta .content .btn:hover',
+                            'label' => __( 'Border', 'storezz-elements' ),
+                            'selector' => '{{WRAPPER}} .storezz-cta .content .btn:hover',
                         ]
                     );
 
@@ -408,7 +408,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
         $target = $settings['button_link']['is_external'] ? ' target="_blank"' : '';
 		$nofollow = $settings['button_link']['nofollow'] ? ' rel="nofollow"' : '';
         ?>
-            <div class="ms-cta <?php echo esc_attr( $content_postition ); ?> <?php echo esc_attr($hover_effect); ?>" id="ms-cta-<?php echo esc_attr( $this->get_id() ); ?>">
+            <div class="storezz-cta <?php echo esc_attr( $content_postition ); ?> <?php echo esc_attr($hover_effect); ?>" id="storezz-cta-<?php echo esc_attr( $this->get_id() ); ?>">
                 <?php if( $image['url'] ) : ?>
                     <div class="image">
                         <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">

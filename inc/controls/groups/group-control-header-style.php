@@ -10,36 +10,36 @@
         protected static $fields;
 
         public static function get_type() {
-            return 'meta-store-header-style';
+            return 'storezz-header-style';
         }
 
         protected function init_fields() {
             $fields = [];
 
             // $fields['color'] = [
-            //     'label' => __('Color', 'meta-store-elements'),
+            //     'label' => __('Color', 'storezz-elements'),
             //     'type' => Controls_Manager::TEXT,
             // ];
 
             $fields['header_color'] = [
-                'label' => __( 'Color', 'meta-store-elements' ),
+                'label' => __( 'Color', 'storezz-elements' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'scheme' => [
                     'type' => \Elementor\Scheme_Color::get_type(),
                     'value' => \Elementor\Scheme_Color::COLOR_1,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ms-header, {{WRAPPER}} .ms-header a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .storezz-header, {{WRAPPER}} .storezz-header a' => 'color: {{VALUE}}',
                 ],
             ];
 
             $fields['header_margin'] = [
-                'label' => __( 'Margin', 'meta-store-elements' ),
+                'label' => __( 'Margin', 'storezz-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'allowed_dimensions' => 'vertical',
                 'selectors' => [
-                    '{{WRAPPER}} .ms-header' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                    '{{WRAPPER}} .storezz-header' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                 ],
             ];
 

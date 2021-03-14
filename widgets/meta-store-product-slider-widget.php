@@ -2,12 +2,12 @@
     class My_Store_Product_Slider_Widget extends \Elementor\Widget_Base {
         /** Widget Name **/
         public function get_name() {
-            return 'ms-product-slider';
+            return 'storezz-product-slider';
         }
 
         /** Widget Title **/
         public function get_title() {
-            return esc_html__( 'Product Slider Widget', 'meta-store-elements' );
+            return esc_html__( 'Product Slider Widget', 'storezz-elements' );
         }
 
         /** Widget Icon **/
@@ -17,7 +17,7 @@
 
         /** Categories **/
         public function get_categories() {
-            return [ 'meta-store-elements' ];
+            return [ 'storezz-elements' ];
         }
 
         /** Dependencies */
@@ -30,14 +30,14 @@
 
             $this->start_controls_section(
                 'header', [
-                    'label' => esc_html__('Header', 'meta-store-elements'),
+                    'label' => esc_html__('Header', 'storezz-elements'),
                 ]
             );
 
                 $this->add_group_control(
                     Group_Control_Header::get_type(), [
                     'name' => 'header',
-                    'label' => esc_html__('Header', 'meta-store-elements'),
+                    'label' => esc_html__('Header', 'storezz-elements'),
                         ]
                 );
 
@@ -45,7 +45,7 @@
 
             $this->start_controls_section(
                 'product_query', [
-                    'label' => esc_html__('Content', 'meta-store-elements'),
+                    'label' => esc_html__('Content', 'storezz-elements'),
                 ]
             );
 
@@ -64,15 +64,15 @@
                 $this->add_control(
                     'product_type',
                     [
-                        'label' => __( 'Product Type', 'meta-store-elements' ),
+                        'label' => __( 'Product Type', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'latest',
                         'options' => [
-                            'latest'  => __( 'Latest', 'meta-store-elements' ),
-                            'featured'  => __( 'Featured', 'meta-store-elements' ),
-                            'best-selling' => __( 'Best Selling', 'meta-store-elements' ),
-                            'sale' => __( 'Sale', 'meta-store-elements' ),
-                            'top-rated' => __( 'Top Rated', 'meta-store-elements' ),
+                            'latest'  => __( 'Latest', 'storezz-elements' ),
+                            'featured'  => __( 'Featured', 'storezz-elements' ),
+                            'best-selling' => __( 'Best Selling', 'storezz-elements' ),
+                            'sale' => __( 'Sale', 'storezz-elements' ),
+                            'top-rated' => __( 'Top Rated', 'storezz-elements' ),
                         ],
                     ]
                 );
@@ -80,7 +80,7 @@
                 $this->add_control(
                     'no_of_products',
                     [
-                        'label' => __( 'No. of products', 'meta-store-elements' ),
+                        'label' => __( 'No. of products', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'no' ],
                         'range' => [
@@ -100,17 +100,17 @@
                 $this->add_control(
                     'orderby',
                     [
-                        'label' => __( 'Order By', 'meta-store-elements' ),
+                        'label' => __( 'Order By', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'none',
                         'options' => [
-                            'none' => __( 'None', 'meta-store-elements' ),
-                            'ID' => __( 'ID', 'meta-store-elements' ),
-                            'date' => __( 'Date', 'meta-store-elements' ),
-                            'name' => __( 'Name', 'meta-store-elements' ),
-                            'title' => __( 'Title', 'meta-store-elements' ),
-                            'rand' => __( 'Random', 'meta-store-elements' ),
-                            'comment_count' => __( 'Comment Count', 'meta-store-elements' ),
+                            'none' => __( 'None', 'storezz-elements' ),
+                            'ID' => __( 'ID', 'storezz-elements' ),
+                            'date' => __( 'Date', 'storezz-elements' ),
+                            'name' => __( 'Name', 'storezz-elements' ),
+                            'title' => __( 'Title', 'storezz-elements' ),
+                            'rand' => __( 'Random', 'storezz-elements' ),
+                            'comment_count' => __( 'Comment Count', 'storezz-elements' ),
                         ],
                     ]
                 );
@@ -118,12 +118,12 @@
                 $this->add_control(
                     'order',
                     [
-                        'label' => __( 'Order By', 'meta-store-elements' ),
+                        'label' => __( 'Order By', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'DESC',
                         'options' => [
-                            'ASC' => __( 'Ascending', 'meta-store-elements' ),
-                            'DESC' => __( 'Descending', 'meta-store-elements' ),
+                            'ASC' => __( 'Ascending', 'storezz-elements' ),
+                            'DESC' => __( 'Descending', 'storezz-elements' ),
                         ],
                     ]
                 );
@@ -132,7 +132,7 @@
 
             $this->start_controls_section(
                 'additional_settings', [
-                    'label' => esc_html__('Additional Settings', 'meta-store-elements'),
+                    'label' => esc_html__('Additional Settings', 'storezz-elements'),
                 ]
             );
 
@@ -164,7 +164,7 @@
                             'size' => 120,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .product-list li .product-image' => 'height: {{SIZE}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-product-list .product-list li .product-image' => 'height: {{SIZE}}{{UNIT}};',
                         ],
                     ]
                 );
@@ -172,14 +172,14 @@
                 $this->add_control(
                     'color_scheme',
                     [
-                        'label' => __( 'Color Scheme', 'meta-store-elements' ),
+                        'label' => __( 'Color Scheme', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .ms-header a:hover,{{WRAPPER}} .ms-product-list .product-list .content h3 a:hover,{{WRAPPER}} .ms-product-list .star-rating span:before,{{WRAPPER}} .ms-product-list .product-list .content h3 a:hover' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .storezz-header a:hover,{{WRAPPER}} .storezz-product-list .product-list .content h3 a:hover,{{WRAPPER}} .storezz-product-list .star-rating span:before,{{WRAPPER}} .storezz-product-list .product-list .content h3 a:hover' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -188,7 +188,7 @@
 
             $this->start_controls_section(
                 'header_style', [
-                    'label' => esc_html__('Header', 'meta-store-elements'),
+                    'label' => esc_html__('Header', 'storezz-elements'),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -196,14 +196,14 @@
                 $this->add_control(
                     'header_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .ms-header,{{WRAPPER}} .ms-product-list .ms-header a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .storezz-header,{{WRAPPER}} .storezz-product-list .storezz-header a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -211,12 +211,12 @@
                 $this->add_control(
                     'header_padding',
                     [
-                        'label' => __( 'Padding', 'meta-store-elements' ),
+                        'label' => __( 'Padding', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'allowed_dimensions' => 'vertical',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .ms-header' => 'padding: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-product-list .storezz-header' => 'padding: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -225,23 +225,23 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'header_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-product-list .ms-header',
+                        'selector' => '{{WRAPPER}} .storezz-product-list .storezz-header',
                     ]
                 );
 
                 $this->add_control(
                     'separator_color',
                     [
-                        'label' => __( 'Separator Color', 'meta-store-elements' ),
+                        'label' => __( 'Separator Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .ms-header' => 'border-bottom-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .storezz-header' => 'border-bottom-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -250,7 +250,7 @@
 
             $this->start_controls_section(
                 'rating_style', [
-                    'label' => esc_html__('Rating', 'meta-store-elements'),
+                    'label' => esc_html__('Rating', 'storezz-elements'),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -258,14 +258,14 @@
                 $this->add_control(
                     'rating_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .star-rating' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .star-rating' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -273,12 +273,12 @@
                 $this->add_control(
                     'rating_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'allowed_dimensions' => 'vertical',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .star-rating' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-product-list .star-rating' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -287,7 +287,7 @@
 
             $this->start_controls_section(
                 'title_style', [
-                    'label' => esc_html__('Product Title', 'meta-store-elements'),
+                    'label' => esc_html__('Product Title', 'storezz-elements'),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -295,14 +295,14 @@
                 $this->add_control(
                     'title_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .product-list .content h3 a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .product-list .content h3 a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -311,21 +311,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'title_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-product-list .product-list .content h3',
+                        'selector' => '{{WRAPPER}} .storezz-product-list .product-list .content h3',
                     ]
                 );
 
                 $this->add_control(
                     'title_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'allowed_dimensions' => 'vertical',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .product-list .content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-product-list .product-list .content h3' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -334,7 +334,7 @@
 
             $this->start_controls_section(
                 'price_style', [
-                    'label' => esc_html__('Price', 'meta-store-elements'),
+                    'label' => esc_html__('Price', 'storezz-elements'),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -342,14 +342,14 @@
                 $this->add_control(
                     'price_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .product-list .price' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-product-list .product-list .price' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -358,21 +358,21 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'price_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-product-list .product-list .price',
+                        'selector' => '{{WRAPPER}} .storezz-product-list .product-list .price',
                     ]
                 );
 
                 $this->add_control(
                     'price_margin',
                     [
-                        'label' => __( 'Margin', 'meta-store-elements' ),
+                        'label' => __( 'Margin', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'allowed_dimensions' => 'vertical',
                         'selectors' => [
-                            '{{WRAPPER}} .ms-product-list .product-list .price' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-product-list .product-list .price' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -391,7 +391,7 @@
                 <div class="">
 
                     <?php if( $product_query->have_posts() ) : ?>
-                        <ul data-carousel-options='{"autoplay":"true","items":"4","loop":"true","nav":"true"}'class="ms-product-slider owl-carousel">
+                        <ul data-carousel-options='{"autoplay":"true","items":"4","loop":"true","nav":"true"}'class="storezz-product-slider owl-carousel">
                             <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>
                                 <li class="producteeg">
                                     <div class="product-image">

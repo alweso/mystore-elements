@@ -2,12 +2,12 @@
 class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
     /** Widget Name **/
     public function get_name() {
-        return 'ms-countdown';
+        return 'storezz-countdown';
     }
 
     /** Widget Title **/
     public function get_title() {
-        return esc_html__( 'Countdown', 'meta-store-elements' );
+        return esc_html__( 'Countdown', 'storezz-elements' );
     }
 
     /** Widget Icon **/
@@ -17,7 +17,7 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
 
     /** Categories **/
     public function get_categories() {
-        return [ 'meta-store-elements' ];
+        return [ 'storezz-elements' ];
     }
 
     /** Widget Controls **/
@@ -26,7 +26,7 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'countdown_content_section',
             [
-                'label' => __( 'Countdown', 'meta-store-elements' ),
+                'label' => __( 'Countdown', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -34,14 +34,14 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'layout',
                 [
-                    'label' => __( 'Layout', 'meta-store-elements' ),
+                    'label' => __( 'Layout', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'calender',
                     'options' => [
-                        'calender'  => __( 'Calender', 'meta-store-elements' ),
-                        'boxer'  => __( 'Boxer', 'meta-store-elements' ),
-                        'circle'  => __( 'Circular', 'meta-store-elements' ),
-                        'simple' => __( 'Simple', 'meta-store-elements' ),
+                        'calender'  => __( 'Calender', 'storezz-elements' ),
+                        'boxer'  => __( 'Boxer', 'storezz-elements' ),
+                        'circle'  => __( 'Circular', 'storezz-elements' ),
+                        'simple' => __( 'Simple', 'storezz-elements' ),
                     ],
                 ]
             );
@@ -49,7 +49,7 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'countdown_date',
                 [
-                    'label' => __( 'Countdown Date', 'meta-store-elements' ),
+                    'label' => __( 'Countdown Date', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::DATE_TIME,
                     'placeholder' => '2020-11-21 12:00'
                 ]
@@ -58,9 +58,9 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'year_text',
                 [
-                    'label' => __( 'Year Text', 'meta-store-elements' ),
+                    'label' => __( 'Year Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Years', 'meta-store-elements' ),
+                    'default' => __( 'Years', 'storezz-elements' ),
                     'separator' => 'before'
                 ]
             );
@@ -68,54 +68,54 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'month_text',
                 [
-                    'label' => __( 'Month Text', 'meta-store-elements' ),
+                    'label' => __( 'Month Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Months', 'meta-store-elements' ),
+                    'default' => __( 'Months', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'week_text',
                 [
-                    'label' => __( 'Week Text', 'meta-store-elements' ),
+                    'label' => __( 'Week Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Weeks', 'meta-store-elements' ),
+                    'default' => __( 'Weeks', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'day_text',
                 [
-                    'label' => __( 'Day Text', 'meta-store-elements' ),
+                    'label' => __( 'Day Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Days', 'meta-store-elements' ),
+                    'default' => __( 'Days', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'hour_text',
                 [
-                    'label' => __( 'Hour Text', 'meta-store-elements' ),
+                    'label' => __( 'Hour Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Hours', 'meta-store-elements' ),
+                    'default' => __( 'Hours', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'minute_text',
                 [
-                    'label' => __( 'Minute Text', 'meta-store-elements' ),
+                    'label' => __( 'Minute Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Minutes', 'meta-store-elements' ),
+                    'default' => __( 'Minutes', 'storezz-elements' ),
                 ]
             );
 
             $this->add_control(
                 'second_text',
                 [
-                    'label' => __( 'Seconds Text', 'meta-store-elements' ),
+                    'label' => __( 'Seconds Text', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Seconds', 'meta-store-elements' ),
+                    'default' => __( 'Seconds', 'storezz-elements' ),
                 ]
             );
 
@@ -124,7 +124,7 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'label_style',
             [
-                'label' => __( 'Label', 'meta-store-elements' ),
+                'label' => __( 'Label', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -132,14 +132,14 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'label_color',
                 [
-                    'label' => __( 'Color', 'meta-store-elements' ),
+                    'label' => __( 'Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-countdown.calender ul li .label,{{WRAPPER}} .ms-countdown.boxer ul li .label' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-countdown.calender ul li .label,{{WRAPPER}} .storezz-countdown.boxer ul li .label' => 'color: {{VALUE}}',
                     ],
                 ]
             );
@@ -147,14 +147,14 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'label_bgcolor',
                 [
-                    'label' => __( 'Background Color', 'meta-store-elements' ),
+                    'label' => __( 'Background Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-countdown.calender ul li .label,{{WRAPPER}} .ms-countdown.boxer ul li .label' => 'background-color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-countdown.calender ul li .label,{{WRAPPER}} .storezz-countdown.boxer ul li .label' => 'background-color: {{VALUE}}',
                     ],
                 ]
             );
@@ -163,9 +163,9 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'label_typography',
-                    'label' => __( 'Typography', 'meta-store-elements' ),
+                    'label' => __( 'Typography', 'storezz-elements' ),
                     'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .ms-countdown.calender ul li .label,{{WRAPPER}} .ms-countdown.boxer ul li .label',
+                    'selector' => '{{WRAPPER}} .storezz-countdown.calender ul li .label,{{WRAPPER}} .storezz-countdown.boxer ul li .label',
                 ]
             );
 
@@ -174,7 +174,7 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'counter_style',
             [
-                'label' => __( 'Counter', 'meta-store-elements' ),
+                'label' => __( 'Counter', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -182,14 +182,14 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'counter_color',
                 [
-                    'label' => __( 'Color', 'meta-store-elements' ),
+                    'label' => __( 'Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-countdown.calender ul li .value,{{WRAPPER}} .ms-countdown.boxer ul li .value' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-countdown.calender ul li .value,{{WRAPPER}} .storezz-countdown.boxer ul li .value' => 'color: {{VALUE}}',
                     ],
                 ]
             );
@@ -197,14 +197,14 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'counter_bgcolor',
                 [
-                    'label' => __( 'Background Color', 'meta-store-elements' ),
+                    'label' => __( 'Background Color', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'scheme' => [
                         'type' => \Elementor\Scheme_Color::get_type(),
                         'value' => \Elementor\Scheme_Color::COLOR_1,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-countdown.calender ul li .value,{{WRAPPER}} .ms-countdown.boxer ul li .value' => 'background-color: {{VALUE}}',
+                        '{{WRAPPER}} .storezz-countdown.calender ul li .value,{{WRAPPER}} .storezz-countdown.boxer ul li .value' => 'background-color: {{VALUE}}',
                     ],
                 ]
             );
@@ -213,9 +213,9 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'counter_typography',
-                    'label' => __( 'Typography', 'meta-store-elements' ),
+                    'label' => __( 'Typography', 'storezz-elements' ),
                     'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                    'selector' => '{{WRAPPER}} .ms-countdown.calender ul li .value,{{WRAPPER}} .ms-countdown.boxer ul li .value',
+                    'selector' => '{{WRAPPER}} .storezz-countdown.calender ul li .value,{{WRAPPER}} .storezz-countdown.boxer ul li .value',
                 ]
             );
 
@@ -228,13 +228,13 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
 
         $countdown_date = $settings['countdown_date'] ? $settings['countdown_date'] : '';
         $layout = $settings['layout'] ? $settings['layout'] : 'calender';
-        $year_text = $settings['year_text'] ? $settings['year_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $month_text = $settings['month_text'] ? $settings['month_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $week_text = $settings['week_text'] ? $settings['week_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $day_text = $settings['day_text'] ? $settings['day_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $hour_text = $settings['hour_text'] ? $settings['hour_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $minute_text = $settings['minute_text'] ? $settings['minute_text'] : esc_html__( 'Years', 'meta-store-elements' );
-        $second_text = $settings['second_text'] ? $settings['second_text'] : esc_html__( 'Years', 'meta-store-elements' );
+        $year_text = $settings['year_text'] ? $settings['year_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $month_text = $settings['month_text'] ? $settings['month_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $week_text = $settings['week_text'] ? $settings['week_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $day_text = $settings['day_text'] ? $settings['day_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $hour_text = $settings['hour_text'] ? $settings['hour_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $minute_text = $settings['minute_text'] ? $settings['minute_text'] : esc_html__( 'Years', 'storezz-elements' );
+        $second_text = $settings['second_text'] ? $settings['second_text'] : esc_html__( 'Years', 'storezz-elements' );
 
         $countdown_data = json_encode( array(
             'date' => $countdown_date,
@@ -252,11 +252,11 @@ class My_Store_Countdown_Widget extends \Elementor\Widget_Base {
 
         if( !$countdown_date ) {
             ?>
-            <div class="ms-error"><?php esc_html__( 'Set the valid countdown date', 'meta-store-elements' ); ?></div>
+            <div class="storezz-error"><?php esc_html__( 'Set the valid countdown date', 'storezz-elements' ); ?></div>
             <?php
         }
         ?>
-            <div class="ms-countdown <?php echo esc_attr( $layout ); ?>" id="ms-countdown-<?php echo esc_attr( $this->get_id() ); ?>" data-countdown="<?php echo esc_attr( $countdown_data ); ?>">Countdown</div>
+            <div class="storezz-countdown <?php echo esc_attr( $layout ); ?>" id="storezz-countdown-<?php echo esc_attr( $this->get_id() ); ?>" data-countdown="<?php echo esc_attr( $countdown_data ); ?>">Countdown</div>
         <?php
     }
 }

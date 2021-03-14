@@ -7,12 +7,12 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
     /** Widget Name */
     public function get_name() {
-        return 'ms-product-category-block2-widget';
+        return 'storezz-product-category-block2-widget';
     }
 
     /** Widget Title */
     public function get_title() {
-        return __('Product Category Block 2', 'meta-store-elements');
+        return __('Product Category Block 2', 'storezz-elements');
     }
 
     /** Icon */
@@ -22,21 +22,21 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
     /** Category */
     public function get_categories() {
-        return ['meta-store-elements'];
+        return ['storezz-elements'];
     }
 
     /** Controls */
     protected function _register_controls() {
         $this->start_controls_section(
                 'content_section', [
-            'label' => __('Content', 'meta-store-elements'),
+            'label' => __('Content', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
                 'product_category1', [
-            'label' => __('Category 1', 'meta-store-elements'),
+            'label' => __('Category 1', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -45,7 +45,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'product_category2', [
-            'label' => __('Category 2', 'meta-store-elements'),
+            'label' => __('Category 2', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -54,7 +54,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'product_category3', [
-            'label' => __('Category 3', 'meta-store-elements'),
+            'label' => __('Category 3', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -63,7 +63,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'product_category4', [
-            'label' => __('Category 4', 'meta-store-elements'),
+            'label' => __('Category 4', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -72,7 +72,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'product_category5', [
-            'label' => __('Category 5', 'meta-store-elements'),
+            'label' => __('Category 5', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
             'options' => My_Store_elements_get_woo_categories_list(),
@@ -83,14 +83,14 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->start_controls_section(
                 'additional_settings', [
-            'label' => __('Additional Settings', 'meta-store-elements'),
+            'label' => __('Additional Settings', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
         );
 
         $this->add_control(
                 'image_size_label', [
-            'label' => __('Image Size', 'meta-store-elements'),
+            'label' => __('Image Size', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::HEADING,
                 ]
         );
@@ -106,14 +106,14 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->add_control(
                 'color_scheme', [
-            'label' => __('Color Scheme', 'meta-store-elements'),
+            'label' => __('Color Scheme', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block2 .cat-btn:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block2 .cat-btn:hover' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -122,21 +122,21 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->start_controls_section(
                 'cat_text_style', [
-            'label' => __('Category Text', 'meta-store-elements'),
+            'label' => __('Category Text', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
                 'cat_text_color', [
-            'label' => __('Text Color', 'meta-store-elements'),
+            'label' => __('Text Color', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block2 .cat-btn .ct-name' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block2 .cat-btn .ct-name' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -144,9 +144,9 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
         $this->add_group_control(
                 \Elementor\Group_Control_Typography::get_type(), [
             'name' => 'cat_text_typography',
-            'label' => __('Typography', 'meta-store-elements'),
+            'label' => __('Typography', 'storezz-elements'),
             'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .ms-product-category-block2 .cat-btn .ct-name',
+            'selector' => '{{WRAPPER}} .storezz-product-category-block2 .cat-btn .ct-name',
                 ]
         );
 
@@ -154,21 +154,21 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
         $this->start_controls_section(
                 'product_count_style', [
-            'label' => __('Product Count', 'meta-store-elements'),
+            'label' => __('Product Count', 'storezz-elements'),
             'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
         );
 
         $this->add_control(
                 'product_count_color', [
-            'label' => __('Color', 'meta-store-elements'),
+            'label' => __('Color', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'scheme' => [
                 'type' => \Elementor\Scheme_Color::get_type(),
                 'value' => \Elementor\Scheme_Color::COLOR_1,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block2 .cat-btn .ct-pcount' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .storezz-product-category-block2 .cat-btn .ct-pcount' => 'color: {{VALUE}}',
             ],
                 ]
         );
@@ -176,20 +176,20 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
         $this->add_group_control(
                 \Elementor\Group_Control_Typography::get_type(), [
             'name' => 'product_count_typography',
-            'label' => __('Typography', 'meta-store-elements'),
+            'label' => __('Typography', 'storezz-elements'),
             'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-            'selector' => '{{WRAPPER}} .ms-product-category-block2 .cat-btn .ct-pcount',
+            'selector' => '{{WRAPPER}} .storezz-product-category-block2 .cat-btn .ct-pcount',
                 ]
         );
 
         $this->add_control(
                 'product_count_margin', [
-            'label' => __('Margin', 'meta-store-elements'),
+            'label' => __('Margin', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%', 'em'],
             'allowed_dimensions' => 'vertical',
             'selectors' => [
-                '{{WRAPPER}} .ms-product-category-block2 .cat-btn .ct-pcount' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                '{{WRAPPER}} .storezz-product-category-block2 .cat-btn .ct-pcount' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
             ],
                 ]
         );
@@ -207,7 +207,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
         $category4 = $settings['product_category4'] ? get_term($settings['product_category4']) : 0;
         $category5 = $settings['product_category5'] ? get_term($settings['product_category5']) : 0;
         ?>
-        <div class="ms-product-category-block2" id="ms-product-category-block2-<?php echo esc_attr($this->get_id()); ?>" >
+        <div class="storezz-product-category-block2" id="storezz-product-category-block2-<?php echo esc_attr($this->get_id()); ?>" >
             <?php if ($category1) : ?>
                 <div class="product-cat product-cat1">
                     <?php $this->get_product_category_content($category1); ?>
@@ -253,7 +253,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
         <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(My_Store_elements_get_altofimage(absint($thumbnail_id))); ?>" />
         <a href="<?php echo esc_url(get_term_link($category)); ?>" class="cat-btn">
             <span class="ct-name" ><?php echo esc_html($category->name); ?></span>
-            <span class="ct-pcount"><?php echo esc_html($category->count); ?> <?php echo esc_html__('Products Inside', 'meta-store-elements'); ?></span>
+            <span class="ct-pcount"><?php echo esc_html($category->count); ?> <?php echo esc_html__('Products Inside', 'storezz-elements'); ?></span>
         </a>
         <?php
     }

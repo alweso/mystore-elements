@@ -10,44 +10,44 @@
         protected static $fields;
 
         public static function get_type() {
-            return 'meta-store-metas';
+            return 'storezz-metas';
         }
 
         protected function init_fields() {
             $fields = [];
 
                 $fields['show_metas'] = [
-                    'label' => __('Post Meta', 'meta-store-elements'),
+                    'label' => __('Post Meta', 'storezz-elements'),
                     'type' => Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                 ];
 
                 $fields['show_author'] = [
-                    'label' => __('Post Author', 'meta-store-elements'),
+                    'label' => __('Post Author', 'storezz-elements'),
                     'type' => Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                 ];
 
                 $fields['show_date'] = [
-                    'label' => __('Post Date', 'meta-store-elements'),
+                    'label' => __('Post Date', 'storezz-elements'),
                     'type' => Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                 ];
 
                 $fields['show_comments'] = [
-                    'label' => __('Post Comments', 'meta-store-elements'),
+                    'label' => __('Post Comments', 'storezz-elements'),
                     'type' => Controls_Manager::SWITCHER,
-                        'label_on' => __( 'Show', 'meta-store-elements' ),
-                        'label_off' => __( 'Hide', 'meta-store-elements' ),
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
                         'return_value' => 'yes',
                         'default' => 'yes',
                 ];

@@ -10,29 +10,29 @@ class Group_Control_Produt_Query extends Group_Control_Base {
     protected static $fields;
 
     public static function get_type() {
-        return 'meta-store-pquery';
+        return 'storezz-pquery';
     }
 
     protected function init_fields() {
         $fields = [];
 
         $fields['tabs'] = [
-            'label' => __( 'Product Tabs', 'meta-store-elements' ),
+            'label' => __( 'Product Tabs', 'storezz-elements' ),
             'type' => \Elementor\Controls_Manager::SELECT2,
             'multiple' => true,
             'options' => [
-                'latest'  => __( 'Latest', 'meta-store-elements' ),
-                'featured'  => __( 'Featured', 'meta-store-elements' ),
-                'best-selling' => __( 'Best Selling', 'meta-store-elements' ),
-                'sale' => __( 'Sale', 'meta-store-elements' ),
-                'top-rated' => __( 'Top Rated', 'meta-store-elements' ),
+                'latest'  => __( 'Latest', 'storezz-elements' ),
+                'featured'  => __( 'Featured', 'storezz-elements' ),
+                'best-selling' => __( 'Best Selling', 'storezz-elements' ),
+                'sale' => __( 'Sale', 'storezz-elements' ),
+                'top-rated' => __( 'Top Rated', 'storezz-elements' ),
             ],
             'default' => [ 'latest', 'featured' ],
             'label_block' => true,
         ];
 
         $fields['no_of_products'] = [
-            'label' => __( 'No. of products', 'meta-store-elements' ),
+            'label' => __( 'No. of products', 'storezz-elements' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'no' ],
             'range' => [
@@ -49,40 +49,40 @@ class Group_Control_Produt_Query extends Group_Control_Base {
         ];
 
         $fields['column_layout'] = [
-            'label' => __( 'Column Layout', 'meta-store-elements' ),
+            'label' => __( 'Column Layout', 'storezz-elements' ),
             'type' => Controls_Manager::SELECT,
             'default' => 'columns-3',
             'options' => array(
-                'columns-2' => __( '2 Column', 'meta-store-elements' ),
-                'columns-3' => __( '3 Column', 'meta-store-elements' ),
-                'columns-4' => __( '4 Column', 'meta-store-elements' ),
-                'columns-5' => __( '5 Column', 'meta-store-elements' ),
-                'columns-6' => __( '6 Column', 'meta-store-elements' )
+                'columns-2' => __( '2 Column', 'storezz-elements' ),
+                'columns-3' => __( '3 Column', 'storezz-elements' ),
+                'columns-4' => __( '4 Column', 'storezz-elements' ),
+                'columns-5' => __( '5 Column', 'storezz-elements' ),
+                'columns-6' => __( '6 Column', 'storezz-elements' )
             )
         ];
 
         $fields['orderby'] = [
-            'label' => __( 'Order By', 'meta-store-elements' ),
+            'label' => __( 'Order By', 'storezz-elements' ),
             'type' => Controls_Manager::SELECT,
             'default' => 'none',
             'options' => array(
-                'none' => __( 'None', 'meta-store-elements' ),
-                'ID' => __( 'ID', 'meta-store-elements' ),
-                'date' => __( 'Date', 'meta-store-elements' ),
-                'name' => __( 'Name', 'meta-store-elements' ),
-                'title' => __( 'Title', 'meta-store-elements' ),
-                'rand' => __( 'Random', 'meta-store-elements' ),
-                'comment_count' => __( 'Comment Count', 'meta-store-elements' ),
+                'none' => __( 'None', 'storezz-elements' ),
+                'ID' => __( 'ID', 'storezz-elements' ),
+                'date' => __( 'Date', 'storezz-elements' ),
+                'name' => __( 'Name', 'storezz-elements' ),
+                'title' => __( 'Title', 'storezz-elements' ),
+                'rand' => __( 'Random', 'storezz-elements' ),
+                'comment_count' => __( 'Comment Count', 'storezz-elements' ),
             )
         ];
 
         $fields['order'] = [
-            'label' => __( 'Order', 'meta-store-elements' ),
+            'label' => __( 'Order', 'storezz-elements' ),
             'type' => Controls_Manager::SELECT,
             'default' => 'DESC',
             'options' => array(
-                'ASC' => __( 'Ascending', 'meta-store-elements' ),
-                'DESC' => __( 'Descending', 'meta-store-elements' ),
+                'ASC' => __( 'Ascending', 'storezz-elements' ),
+                'DESC' => __( 'Descending', 'storezz-elements' ),
             )
         ];
 
@@ -93,7 +93,7 @@ class Group_Control_Produt_Query extends Group_Control_Base {
         $post_type_args = [
             'show_in_nav_menus' => true,
         ];
-        
+
         $_post_types = get_post_types($post_type_args, 'objects');
 
         $post_types = [];

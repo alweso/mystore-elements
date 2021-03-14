@@ -6,12 +6,12 @@
 
         /** Widget Name */
         public function get_name() {
-            return 'ms-vertical-menu-widget';
+            return 'storezz-vertical-menu-widget';
         }
 
         /** Widget Title */
         public function get_title() {
-            return __( 'Vertical Menu', 'meta-store-elements' );
+            return __( 'Vertical Menu', 'storezz-elements' );
         }
 
         /** Icon */
@@ -21,7 +21,7 @@
 
         /** Category */
         public function get_categories() {
-            return [ 'meta-store-elements' ];
+            return [ 'storezz-elements' ];
         }
 
         /** Controls */
@@ -29,7 +29,7 @@
             $this->start_controls_section(
                 'content_section',
                 [
-                    'label' => __( 'Content', 'meta-store-elements' ),
+                    'label' => __( 'Content', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -37,16 +37,16 @@
                 $this->add_control(
                     'menu_heading',
                     [
-                        'label' => __( 'Heading', 'meta-store-elements' ),
+                        'label' => __( 'Heading', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'Default title', 'meta-store-elements' ),
+                        'default' => __( 'Default title', 'storezz-elements' ),
                     ]
                 );
 
                 $this->add_control(
                     'heading_icon',
                     [
-                        'label' => __( 'Heading Icon', 'meta-store-elements' ),
+                        'label' => __( 'Heading Icon', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::ICONS,
                         'default' => [
                             'value' => 'fas fa-star',
@@ -58,7 +58,7 @@
                 $this->add_control(
                     'heading_tag',
                     [
-                        'label' => __( 'Heading Tag', 'meta-store-elements' ),
+                        'label' => __( 'Heading Tag', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'h3',
                         'options' => My_Store_elements_tag_lists(),
@@ -68,7 +68,7 @@
                 $this->add_control(
                     'menu',
                     [
-                        'label' => __( 'Menu', 'meta-store-elements' ),
+                        'label' => __( 'Menu', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'none',
                         'options' => My_Store_elements_menulist(),
@@ -80,7 +80,7 @@
             $this->start_controls_section(
                 'menu_heading_style',
                 [
-                    'label' => __( 'Menu Heading', 'meta-store-elements' ),
+                    'label' => __( 'Menu Heading', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -88,14 +88,14 @@
                 $this->add_control(
                     'menu_heading_bgcolor',
                     [
-                        'label' => __( 'Background Color', 'meta-store-elements' ),
+                        'label' => __( 'Background Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu .heading' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-vertical-menu .heading' => 'background-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -103,14 +103,14 @@
                 $this->add_control(
                     'menu_heading_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu .heading, {{WRAPPER}} .ms-vertical-menu .heading .text' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-vertical-menu .heading, {{WRAPPER}} .storezz-vertical-menu .heading .text' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -119,9 +119,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'menu_heading_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-vertical-menu .heading .text',
+                        'selector' => '{{WRAPPER}} .storezz-vertical-menu .heading .text',
                     ]
                 );
 
@@ -130,7 +130,7 @@
             $this->start_controls_section(
                 'menu_block_style',
                 [
-                    'label' => __( 'Menu Box', 'meta-store-elements' ),
+                    'label' => __( 'Menu Box', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -138,15 +138,15 @@
                 $this->add_control(
                     'menu_block_border_color',
                     [
-                        'label' => __( 'Border Color', 'meta-store-elements' ),
+                        'label' => __( 'Border Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu ul li:after' => 'background-color: {{VALUE}}',
-                            '{{WRAPPER}} .ms-vertical-menu ul' => 'border-color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-vertical-menu ul li:after' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-vertical-menu ul' => 'border-color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -154,14 +154,14 @@
                 $this->add_control(
                     'menu_block_bgcolor',
                     [
-                        'label' => __( 'Background Color', 'meta-store-elements' ),
+                        'label' => __( 'Background Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu ul' => 'background-color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-vertical-menu ul' => 'background-color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -169,14 +169,14 @@
                 $this->add_control(
                     'menu_text_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu ul a' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-vertical-menu ul a' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -184,14 +184,14 @@
                 $this->add_control(
                     'menu_text_hover_color',
                     [
-                        'label' => __( 'Hover Color', 'meta-store-elements' ),
+                        'label' => __( 'Hover Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-vertical-menu ul a:hover' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-vertical-menu ul a:hover' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -200,9 +200,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'title_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-vertical-menu ul a',
+                        'selector' => '{{WRAPPER}} .storezz-vertical-menu ul a',
                     ]
                 );
 
@@ -223,7 +223,7 @@
 
             if( $menu !== 'none' ) {
             ?>
-                <div class="ms-vertical-menu" id="ms-vertical-menu-<?php echo esc_attr( $this->get_id() ) ?>">
+                <div class="storezz-vertical-menu" id="storezz-vertical-menu-<?php echo esc_attr( $this->get_id() ) ?>">
                     <?php if( $before_heading !== '' ) : ?>
                         <div class="heading">
                             <div class="icon">

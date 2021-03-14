@@ -6,12 +6,12 @@
 
         /** Widget Name */
         public function get_name() {
-            return 'ms-slider-widget';
+            return 'storezz-slider-widget';
         }
 
         /** Widget Title */
         public function get_title() {
-            return __( 'Slider', 'meta-store-elements' );
+            return __( 'Slider', 'storezz-elements' );
         }
 
         /** Icon */
@@ -21,7 +21,7 @@
 
         /** Category */
         public function get_categories() {
-            return [ 'meta-store-elements' ];
+            return [ 'storezz-elements' ];
         }
 
         /** Dependencies */
@@ -34,7 +34,7 @@
             $this->start_controls_section(
                 'content',
                 [
-                    'label' => __( 'Slider', 'meta-store-elements' ),
+                    'label' => __( 'Slider', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
                 ]
             );
@@ -44,7 +44,7 @@
                 $repeater->add_control(
                     'image',
                     [
-                        'label' => __( 'Choose Image', 'meta-store-elements' ),
+                        'label' => __( 'Choose Image', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::MEDIA,
                         'default' => [
                             'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -54,18 +54,18 @@
 
                 $repeater->add_control(
                     'subtitle', [
-                        'label' => __( 'Sub Title', 'meta-store-elements' ),
+                        'label' => __( 'Sub Title', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'Slide Sub 1' , 'meta-store-elements' ),
+                        'default' => __( 'Slide Sub 1' , 'storezz-elements' ),
                         'label_block' => true,
                     ]
                 );
 
                 $repeater->add_control(
                     'title', [
-                        'label' => __( 'Title', 'meta-store-elements' ),
+                        'label' => __( 'Title', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'Slide 1' , 'meta-store-elements' ),
+                        'default' => __( 'Slide 1' , 'storezz-elements' ),
                         'label_block' => true,
                     ]
                 );
@@ -73,21 +73,21 @@
                 $repeater->add_control(
                     'content',
                     [
-                        'label' => __( 'Description', 'meta-store-elements' ),
+                        'label' => __( 'Description', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXTAREA,
                         'rows' => 10,
-                        'default' => __( 'Default description', 'meta-store-elements' ),
-                        'placeholder' => __( 'Type your description here', 'meta-store-elements' ),
+                        'default' => __( 'Default description', 'storezz-elements' ),
+                        'placeholder' => __( 'Type your description here', 'storezz-elements' ),
                     ]
                 );
 
                 $repeater->add_control(
                     'btn_text',
                     [
-                        'label' => __( 'Button Text', 'meta-store-elements' ),
+                        'label' => __( 'Button Text', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::TEXT,
-                        'default' => __( 'VIEW MORE', 'meta-store-elements' ),
-                        'placeholder' => __( 'Set Button Label text.', 'meta-store-elements' ),
+                        'default' => __( 'VIEW MORE', 'storezz-elements' ),
+                        'placeholder' => __( 'Set Button Label text.', 'storezz-elements' ),
                         'label_block' => true
                     ]
                 );
@@ -95,9 +95,9 @@
                 $repeater->add_control(
                     'btn_link',
                     [
-                        'label' => __( 'Link', 'meta-store-elements' ),
+                        'label' => __( 'Link', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::URL,
-                        'placeholder' => __( 'https://your-link.com', 'meta-store-elements' ),
+                        'placeholder' => __( 'https://your-link.com', 'storezz-elements' ),
                         'show_external' => true,
                         'default' => [
                             'url' => '',
@@ -110,17 +110,17 @@
                 $this->add_control(
                     'slides',
                     [
-                        'label' => __( 'Slides', 'meta-store-elements' ),
+                        'label' => __( 'Slides', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::REPEATER,
                         'fields' => $repeater->get_controls(),
                         'default' => [
                             [
-                                'title' => __( 'Slide #1', 'meta-store-elements' ),
-                                'content' => __( 'Slide Content.', 'meta-store-elements' ),
+                                'title' => __( 'Slide #1', 'storezz-elements' ),
+                                'content' => __( 'Slide Content.', 'storezz-elements' ),
                             ],
                             [
-                                'title' => __( 'Slide #2', 'meta-store-elements' ),
-                                'content' => __( 'Slide Content.', 'meta-store-elements' ),
+                                'title' => __( 'Slide #2', 'storezz-elements' ),
+                                'content' => __( 'Slide Content.', 'storezz-elements' ),
                             ],
                         ],
                         'title_field' => '{{{ title }}}',
@@ -142,7 +142,7 @@
             $this->start_controls_section(
                 'slide_style',
                 [
-                    'label' => __( 'Slide', 'meta-store-elements' ),
+                    'label' => __( 'Slide', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -150,7 +150,7 @@
                 $this->add_control(
                     'slide_height',
                     [
-                        'label' => __( 'Height', 'meta-store-elements' ),
+                        'label' => __( 'Height', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -165,7 +165,7 @@
                             'size' => 550,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide' => 'height: {{SIZE}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-slider .slide' => 'height: {{SIZE}}{{UNIT}};',
                         ],
                     ]
                 );
@@ -173,7 +173,7 @@
                 $this->add_control(
                     'slide_padding_left',
                     [
-                        'label' => __( 'Content Left Spacing', 'meta-store-elements' ),
+                        'label' => __( 'Content Left Spacing', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -188,7 +188,7 @@
                             'size' => 0,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide .slide-content' => 'padding-left: {{SIZE}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-slider .slide .slide-content' => 'padding-left: {{SIZE}}{{UNIT}};',
                         ],
                     ]
                 );
@@ -198,7 +198,7 @@
             $this->start_controls_section(
                 'subtitle_style',
                 [
-                    'label' => __( 'Subtitle', 'meta-store-elements' ),
+                    'label' => __( 'Subtitle', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -206,14 +206,14 @@
                 $this->add_control(
                     'subtitle_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-subtitle' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-subtitle' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -222,9 +222,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'subtitle_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-slider .slide-content .slide-subtitle',
+                        'selector' => '{{WRAPPER}} .storezz-slider .slide-content .slide-subtitle',
                     ]
                 );
 
@@ -233,7 +233,7 @@
             $this->start_controls_section(
                 'title_style',
                 [
-                    'label' => __( 'Slider Title', 'meta-store-elements' ),
+                    'label' => __( 'Slider Title', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -241,14 +241,14 @@
                 $this->add_control(
                     'title_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-title' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-title' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -257,16 +257,16 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'title_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-slider .slide-content .slide-title',
+                        'selector' => '{{WRAPPER}} .storezz-slider .slide-content .slide-title',
                     ]
                 );
 
                 $this->add_control(
                     'title_spacing',
                     [
-                        'label' => __( 'Spacing', 'meta-store-elements' ),
+                        'label' => __( 'Spacing', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -281,7 +281,7 @@
                             'size' => 0,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-title' => 'margin: {{SIZE}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-title' => 'margin: {{SIZE}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -291,7 +291,7 @@
             $this->start_controls_section(
                 'content_style',
                 [
-                    'label' => __( 'Slider Content', 'meta-store-elements' ),
+                    'label' => __( 'Slider Content', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -299,14 +299,14 @@
                 $this->add_control(
                     'content_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-description' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-description' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -315,16 +315,16 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'content_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-slider .slide-content .slide-description',
+                        'selector' => '{{WRAPPER}} .storezz-slider .slide-content .slide-description',
                     ]
                 );
 
                 $this->add_control(
                     'content_spacing',
                     [
-                        'label' => __( 'Spacing', 'meta-store-elements' ),
+                        'label' => __( 'Spacing', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -339,7 +339,7 @@
                             'size' => 0,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-description' => 'margin: {{SIZE}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-description' => 'margin: {{SIZE}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -349,7 +349,7 @@
             $this->start_controls_section(
                 'readmore_style',
                 [
-                    'label' => __( 'Readmore', 'meta-store-elements' ),
+                    'label' => __( 'Readmore', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -357,14 +357,14 @@
                 $this->add_control(
                     'readmore_bgcolor',
                     [
-                        'label' => __( 'Background Color', 'meta-store-elements' ),
+                        'label' => __( 'Background Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-btn' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-btn' => 'background-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -372,14 +372,14 @@
                 $this->add_control(
                     'readmore_color',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-btn' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-btn' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -388,9 +388,9 @@
                     \Elementor\Group_Control_Typography::get_type(),
                     [
                         'name' => 'readmore_typography',
-                        'label' => __( 'Typography', 'meta-store-elements' ),
+                        'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .ms-slider .slide-content .slide-btn',
+                        'selector' => '{{WRAPPER}} .storezz-slider .slide-content .slide-btn',
                     ]
                 );
 
@@ -398,19 +398,19 @@
                     \Elementor\Group_Control_Border::get_type(),
                     [
                         'name' => 'readmore_border',
-                        'label' => __( 'Border', 'meta-store-elements' ),
-                        'selector' => '{{WRAPPER}} .ms-slider .slide-content .slide-btn',
+                        'label' => __( 'Border', 'storezz-elements' ),
+                        'selector' => '{{WRAPPER}} .storezz-slider .slide-content .slide-btn',
                     ]
                 );
 
                 $this->add_control(
                     'readmore_border_radius',
                     [
-                        'label' => __( 'Border Radius', 'meta-store-elements' ),
+                        'label' => __( 'Border Radius', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                         ]
                     ]
                 );
@@ -418,7 +418,7 @@
                 $this->add_control(
                     'readmore_heading',
                     [
-                        'label' => __( 'Button Hover', 'meta-store-elements' ),
+                        'label' => __( 'Button Hover', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::HEADING,
                         'separator' => 'before',
                     ]
@@ -427,14 +427,14 @@
                 $this->add_control(
                     'readmore_bgcolor_hover',
                     [
-                        'label' => __( 'Background Color', 'meta-store-elements' ),
+                        'label' => __( 'Background Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-btn:hover' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-btn:hover' => 'background-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -442,14 +442,14 @@
                 $this->add_control(
                     'readmore_color_hover',
                     [
-                        'label' => __( 'Color', 'meta-store-elements' ),
+                        'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'scheme' => [
                             'type' => \Elementor\Scheme_Color::get_type(),
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .ms-slider .slide-content .slide-btn:hover' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-slider .slide-content .slide-btn:hover' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -465,7 +465,7 @@
 
             if( !empty( $slides ) ) :
             ?>
-                <div class="ms-slider owl-carousel" id="ms-slider-<?php echo esc_attr( $this->get_id() ) ?>">
+                <div class="storezz-slider owl-carousel" id="storezz-slider-<?php echo esc_attr( $this->get_id() ) ?>">
                     <?php foreach( $slides as $slide ) : ?>
                         <?php if( isset( $slide['image']['url'] ) ) : ?>
                             <?php
@@ -477,7 +477,7 @@
                                 $image_style = "style='background-image: url( ". esc_url( $image_url ) ." );'";
                             ?>
                             <div class="slide" <?php echo $image_style; ?> >
-                                <div class="slide-content ms-container">
+                                <div class="slide-content storezz-container">
 
                                     <?php if( $slide['subtitle'] ) : ?>
                                         <span class="slide-subtitle"><?php echo esc_html( $slide['subtitle'] ); ?></span>
@@ -513,7 +513,7 @@
         protected function render_script() {
             $settings = $this->get_settings_for_display();
 
-            $id = '#ms-slider-' . $this->get_id();
+            $id = '#storezz-slider-' . $this->get_id();
             ?>
                 <script type="text/javascript">
                     jQuery(document).ready(function($){

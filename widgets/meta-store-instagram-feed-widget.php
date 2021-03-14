@@ -2,12 +2,12 @@
 class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
     /** Widget Name **/
     public function get_name() {
-        return 'ms-instagram-feeds';
+        return 'storezz-instagram-feeds';
     }
 
     /** Widget Title **/
     public function get_title() {
-        return esc_html__( 'Instagram Feeds', 'meta-store-elements' );
+        return esc_html__( 'Instagram Feeds', 'storezz-elements' );
     }
 
     /** Widget Icon **/
@@ -17,7 +17,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
 
     /** Categories **/
     public function get_categories() {
-        return [ 'meta-store-elements' ];
+        return [ 'storezz-elements' ];
     }
 
     /** Dependencies */
@@ -31,7 +31,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'insta_content_section',
             [
-                'label' => __( 'Instagram Feeds', 'meta-store-elements' ),
+                'label' => __( 'Instagram Feeds', 'storezz-elements' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -39,12 +39,12 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'fetch_by',
                 [
-                    'label' => __( 'Fetch By', 'meta-store-elements' ),
+                    'label' => __( 'Fetch By', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'username',
                     'options' => [
-                        'username'  => __( 'Username', 'meta-store-elements' ),
-                        'tag' => __( 'Tag', 'meta-store-elements' ),
+                        'username'  => __( 'Username', 'storezz-elements' ),
+                        'tag' => __( 'Tag', 'storezz-elements' ),
                     ],
                 ]
             );
@@ -52,10 +52,10 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'username',
                 [
-                    'label' => __( 'Username', 'meta-store-elements' ),
+                    'label' => __( 'Username', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( '', 'meta-store-elements' ),
-                    'placeholder' => __( 'Enter the instagram username', 'meta-store-elements' ),
+                    'default' => __( '', 'storezz-elements' ),
+                    'placeholder' => __( 'Enter the instagram username', 'storezz-elements' ),
                     'condition'     => [
                         'fetch_by' => 'username',
                     ],
@@ -65,10 +65,10 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'tag',
                 [
-                    'label' => __( 'Tag', 'meta-store-elements' ),
+                    'label' => __( 'Tag', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( '', 'meta-store-elements' ),
-                    'placeholder' => __( 'Enter the instagram tag', 'meta-store-elements' ),
+                    'default' => __( '', 'storezz-elements' ),
+                    'placeholder' => __( 'Enter the instagram tag', 'storezz-elements' ),
                     'condition'     => [
                         'fetch_by' => 'tag',
                     ],
@@ -78,10 +78,10 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'display_profile',
                 [
-                    'label' => __( 'Display Profile', 'meta-store-elements' ),
+                    'label' => __( 'Display Profile', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Yes', 'meta-store-elements' ),
-                    'label_off' => __( 'No', 'meta-store-elements' ),
+                    'label_on' => __( 'Yes', 'storezz-elements' ),
+                    'label_off' => __( 'No', 'storezz-elements' ),
                     'return_value' => '',
                     'default' => 'yes',
                 ]
@@ -90,7 +90,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'insta_feeds',
                 [
-                    'label' => __( 'Number of Photos', 'meta-store-elements' ),
+                    'label' => __( 'Number of Photos', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 12,
@@ -102,15 +102,15 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'column_layout',
                 [
-                    'label' => __( 'Column Layout', 'meta-store-elements' ),
+                    'label' => __( 'Column Layout', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'column-4',
                     'options' => [
-                        'column-3'  => __( '3 Column', 'meta-store-elements' ),
-                        'column-4'  => __( '4 Column', 'meta-store-elements' ),
-                        'column-5'  => __( '5 Column', 'meta-store-elements' ),
-                        'column-6'  => __( '6 Column', 'meta-store-elements' ),
-                        'column-7'  => __( '7 Column', 'meta-store-elements' ),
+                        'column-3'  => __( '3 Column', 'storezz-elements' ),
+                        'column-4'  => __( '4 Column', 'storezz-elements' ),
+                        'column-5'  => __( '5 Column', 'storezz-elements' ),
+                        'column-6'  => __( '6 Column', 'storezz-elements' ),
+                        'column-7'  => __( '7 Column', 'storezz-elements' ),
                     ],
                 ]
             );
@@ -118,15 +118,15 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'image_size',
                 [
-                    'label' => __( 'Image Size', 'meta-store-elements' ),
+                    'label' => __( 'Image Size', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => '640',
                     'options' => [
-                        '150'  => __( '150x150', 'meta-store-elements' ),
-                        '240'  => __( '240x240', 'meta-store-elements' ),
-                        '320'  => __( '320x320', 'meta-store-elements' ),
-                        '480'  => __( '480x480', 'meta-store-elements' ),
-                        '640'  => __( '640x640', 'meta-store-elements' ),
+                        '150'  => __( '150x150', 'storezz-elements' ),
+                        '240'  => __( '240x240', 'storezz-elements' ),
+                        '320'  => __( '320x320', 'storezz-elements' ),
+                        '480'  => __( '480x480', 'storezz-elements' ),
+                        '640'  => __( '640x640', 'storezz-elements' ),
                     ],
                 ]
             );
@@ -134,7 +134,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
             $this->add_control(
                 'margin',
                 [
-                    'label' => __( 'Margin', 'meta-store-elements' ),
+                    'label' => __( 'Margin', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -149,8 +149,8 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
                         'size' => 10,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .ms-instagram-feed .instagram_gallery a' => 'padding:{{SIZE}}{{UNIT}};',
-                        '{{WRAPPER}} .ms-instagram-feed .instagram_gallery' => 'margin:-{{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .storezz-instagram-feed .instagram_gallery a' => 'padding:{{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .storezz-instagram-feed .instagram_gallery' => 'margin:-{{SIZE}}{{UNIT}};',
                     ],
                 ]
             );
@@ -169,13 +169,13 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
 
         if( !$username && !$tag ) {
             ?>
-            <div class="ms-error">
-                <?php esc_html_e( 'Please set the Username or Tag name.', 'meta-store-elements' ); ?>
+            <div class="storezz-error">
+                <?php esc_html_e( 'Please set the Username or Tag name.', 'storezz-elements' ); ?>
             </div>
             <?php
         }
         ?>
-            <div class="ms-instagram-feed <?php echo esc_attr( $column_layout ); ?>" id="ms-instagram-feed-<?php echo esc_attr( $this->get_id() ); ?>" data-insta="<?php echo esc_attr( $insta_datas ); ?>">
+            <div class="storezz-instagram-feed <?php echo esc_attr( $column_layout ); ?>" id="storezz-instagram-feed-<?php echo esc_attr( $this->get_id() ); ?>" data-insta="<?php echo esc_attr( $insta_datas ); ?>">
             </div>
         <?php
         // $this->render_script();
@@ -185,7 +185,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
     protected function render_script() {
         $insta_datas = $this->get_insta_datas();
 
-        $id = '#ms-instagram-feed-' . $this->get_id();
+        $id = '#storezz-instagram-feed-' . $this->get_id();
         /*
         ?>
             <script type="text/javascript">
@@ -236,7 +236,7 @@ class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
         $display_profile = ( $settings['display_profile'] ) ? 'true' : 'false';
 
         $insta_datas = array(
-            'container' => '#ms-instagram-feed-' . $this->get_id(),
+            'container' => '#storezz-instagram-feed-' . $this->get_id(),
             'display_profile' => $display_profile,
             'display_biography' => 'false',
             'display_gallery' => 'true',

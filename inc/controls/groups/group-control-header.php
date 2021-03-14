@@ -10,20 +10,20 @@
         protected static $fields;
 
         public static function get_type() {
-            return 'meta-store-header';
+            return 'storezz-header';
         }
 
         protected function init_fields() {
             $fields = [];
 
             $fields['title'] = [
-                'label' => __('Title', 'meta-store-elements'),
+                'label' => __('Title', 'storezz-elements'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true
             ];
 
             $fields['link'] = [
-                'label' => __('Link', 'meta-store-elements'),
+                'label' => __('Link', 'storezz-elements'),
                 'type' => Controls_Manager::URL,
                 'show_external' => true,
                 'default' => [
@@ -34,17 +34,17 @@
             ];
 
             $fields['tag'] = [
-                'label' => __('Tag', 'meta-store-elements'),
+                'label' => __('Tag', 'storezz-elements'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'h1' => esc_html__('H1', 'meta-store-elements'),
-                    'h2' => esc_html__('H2', 'meta-store-elements'),
-                    'h3' => esc_html__('H3', 'meta-store-elements'),
-                    'h4' => esc_html__('H4', 'meta-store-elements'),
-                    'h5' => esc_html__('H5', 'meta-store-elements'),
-                    'h6' => esc_html__('H6', 'meta-store-elements'),
-                    'span' => esc_html__('span', 'meta-store-elements'),
-                    'div' => esc_html__('div', 'meta-store-elements')
+                    'h1' => esc_html__('H1', 'storezz-elements'),
+                    'h2' => esc_html__('H2', 'storezz-elements'),
+                    'h3' => esc_html__('H3', 'storezz-elements'),
+                    'h4' => esc_html__('H4', 'storezz-elements'),
+                    'h5' => esc_html__('H5', 'storezz-elements'),
+                    'h6' => esc_html__('H6', 'storezz-elements'),
+                    'span' => esc_html__('span', 'storezz-elements'),
+                    'div' => esc_html__('div', 'storezz-elements')
                 ],
                 'default' => 'h2',
             ];
