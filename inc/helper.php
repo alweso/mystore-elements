@@ -189,7 +189,7 @@ if( !function_exists( 'woocommerceCategorySlug' ) ) {
 /** Get Sales Product List */
 if( !function_exists( 'storezz_elements_get_sales_products' ) ) {
   function storezz_elements_get_sales_products() {
-    $product_list = array( '0' => __( 'Select Product', 'storezz--elements' ) );
+    $product_list = array( '0' => __( 'Select Product', 'storezz-elements' ) );
 
     $args = array(
       'post_type' => 'product',
@@ -228,7 +228,7 @@ if( !function_exists( 'storezz_elements_menulist' ) ) {
   function storezz_elements_menulist() {
     $menus = wp_get_nav_menus();
 
-    $menu_list['none'] = esc_html__(' -- Select Menu -- ', 'storezz-');
+    $menu_list['none'] = esc_html__(' -- Select Menu -- ', 'storezz');
     foreach ($menus as $menu) {
       $menu_list[$menu->slug] = $menu->name;
     }

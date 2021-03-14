@@ -6,12 +6,12 @@
     var MTSE = {
       init: function () {
         var widgets = {
-          "ms-slider-widget.default": MTSE.Slider,
-          "ms-instagram-feeds.default": MTSE.InstaFeeds,
-          "ms-testimonial-slider.default": MTSE.TestimonialSlider,
-          "ms-product-slider.default": MTSE.ProductSlider,
-          "ms-product-tabs-grid.default": MTSE.Tabs,
-          "ms-countdown.default": MTSE.Countdown
+          "storezz-slider-widget.default": MTSE.Slider,
+          "storezz-instagram-feeds.default": MTSE.InstaFeeds,
+          "storezz-testimonial-slider.default": MTSE.TestimonialSlider,
+          "storezz-product-slider.default": MTSE.ProductSlider,
+          "storezz-product-tabs-grid.default": MTSE.Tabs,
+          "storezz-countdown.default": MTSE.Countdown
         };
 
         $.each(widgets, function (widget, callback) {
@@ -20,7 +20,7 @@
       },
 
       Slider: function ( $scope ) {
-        var sliders = $scope.find(".ms-slider");
+        var sliders = $scope.find(".storezz-slider");
 
         if (sliders.length > 0) {
           sliders.each(function () {
@@ -37,7 +37,7 @@
       },
 
       ProductSlider: function ( $scope ) {
-        var productSliders = $scope.find(".ms-product-slider");
+        var productSliders = $scope.find(".storezz-product-slider");
         if (productSliders.length > 0) {
           productSliders.each(function () {
             var productSlider = $(this);
@@ -51,7 +51,7 @@
         }
       },
       InstaFeeds: function ( $scope ) {
-        var instas = $scope.find(".ms-instagram-feed");
+        var instas = $scope.find(".storezz-instagram-feed");
 
         if (instas.length > 0) {
             instas.each(function () {
@@ -82,7 +82,7 @@
       },
       TestimonialSlider: function ( $scope ) {
 
-        var tslider = $scope.find(".ms-testimonial-slider");
+        var tslider = $scope.find(".storezz-testimonial-slider");
         if (tslider.length > 0) {
           tslider.each(function () {
             var tslider = $(this);
@@ -95,7 +95,7 @@
 
 
       Tabs: function( $scope ) {
-        var tabs = $scope.find(".ms-product-tabs-grid");
+        var tabs = $scope.find(".storezz-product-tabs-grid");
 
         if( tabs.length > 0 ) {
           tabs.each(function(index, tab) {
@@ -104,16 +104,16 @@
               let id = $(this).data('id');
 
               $(this).siblings().removeClass('active');
-              $(this).parents('.ms-product-tabs-grid').find('.products').removeClass('active');
+              $(this).parents('.storezz-product-tabs-grid').find('.products').removeClass('active');
 
               $(this).addClass('active');
-              $(this).parents('.ms-product-tabs-grid').find('#' + id).addClass('active');
+              $(this).parents('.storezz-product-tabs-grid').find('#' + id).addClass('active');
             });
           });
         }
       },
       Countdown: function ( $scope ) {
-        var countdowns = $scope.find(".ms-countdown");
+        var countdowns = $scope.find(".storezz-countdown");
 
         if (countdowns.length > 0) {
           countdowns.each(function () {

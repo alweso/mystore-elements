@@ -7,7 +7,7 @@ class Storezz_Product_Grid_Widget extends \Elementor\Widget_Base {
 
   /** Widget Name */
   public function get_name() {
-    return 'storezz-product-product-grid-widget';
+    return 'storezz-product-grid-widget';
   }
 
   /** Widget Title */
@@ -232,7 +232,7 @@ class Storezz_Product_Grid_Widget extends \Elementor\Widget_Base {
   /** Render Layout */
   protected function render() {
     $settings = $this->get_settings_for_display();
-
+    
     $chooseCategories = $settings['choose_categories'];
     $orderBy = $settings['order_by'];
     $order = $settings['order'];

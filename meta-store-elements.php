@@ -281,7 +281,7 @@
         public function add_elementor_widget_categories( $elements_manager ) {
             $elements_manager->add_category(
                 'storezz-elements', array(
-                    'title' => __( 'My Store Elements', 'storezz-elements' ),
+                    'title' => __( 'Storezz Elements', 'storezz-elements' ),
                     'icon' => 'fa fa-plug',
                 )
             );
