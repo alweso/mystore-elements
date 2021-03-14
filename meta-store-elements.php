@@ -6,7 +6,7 @@
      * Version: 1.0.1
      * Author:
      * Author URI: https://mysticalthemes.com/
-     * Text Domain: storrez-elements
+     * Text Domain: storezz-elements
      */
 
     if ( ! defined( 'ABSPATH' ) ) {
