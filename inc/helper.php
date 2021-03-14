@@ -4,8 +4,8 @@
 */
 
 /** Get Post Lists */
-if( !function_exists( 'my_store_elements_post_lists' ) ) {
-  function my_store_elements_post_lists($multiple) {
+if( !function_exists( 'storezz_elements_post_lists' ) ) {
+  function storezz_elements_post_lists($multiple) {
     $posts = get_posts(array('posts_per_page' => 100));
 
     if( $multiple ) {
@@ -25,8 +25,8 @@ if( !function_exists( 'my_store_elements_post_lists' ) ) {
 }
 
 /** Get Tag Lists */
-if( !function_exists( 'my_store_elements_tag_lists' ) ) {
-  function my_store_elements_tag_lists() {
+if( !function_exists( 'storezz_elements_tag_lists' ) ) {
+  function storezz_elements_tag_lists() {
     return array(
       'h1' => __('H1', 'storezz--elements'),
       'h2' => __('H2', 'storezz--elements'),
@@ -41,8 +41,8 @@ if( !function_exists( 'my_store_elements_tag_lists' ) ) {
 }
 
 /** Orderby List */
-if( !function_exists( 'my_store_elements_orderby_list' ) ) {
-  function my_store_elements_orderby_list() {
+if( !function_exists( 'storezz_elements_orderby_list' ) ) {
+  function storezz_elements_orderby_list() {
     return array(
       'none' => __( 'None', 'storezz--elements' ),
       'date' => __( 'Date', 'storezz--elements' ),
@@ -54,8 +54,8 @@ if( !function_exists( 'my_store_elements_orderby_list' ) ) {
 }
 
 /** Order List */
-if( !function_exists( 'my_store_elements_order_list' ) ) {
-  function my_store_elements_order_list() {
+if( !function_exists( 'storezz_elements_order_list' ) ) {
+  function storezz_elements_order_list() {
     return array(
       'ASC' => __( 'Ascending', 'storezz--elements' ),
       'DESC' => __( 'Descending', 'storezz--elements' ),
@@ -64,8 +64,8 @@ if( !function_exists( 'my_store_elements_order_list' ) ) {
 }
 
 /** Image Sizes List */
-if( !function_exists( 'my_store_elements_imagesizes_list' ) ) {
-  function my_store_elements_imagesizes_list() {
+if( !function_exists( 'storezz_elements_imagesizes_list' ) ) {
+  function storezz_elements_imagesizes_list() {
     global $_wp_additional_image_sizes;
 
     $default_image_sizes = get_intermediate_image_sizes();
@@ -88,8 +88,8 @@ if( !function_exists( 'my_store_elements_imagesizes_list' ) ) {
 }
 
 /** Get Attachment Alt Tag */
-if( !function_exists( 'my_store_elements_get_altofimage' ) ) {
-  function my_store_elements_get_altofimage( $attachment ) {
+if( !function_exists( 'storezz_elements_get_altofimage' ) ) {
+  function storezz_elements_get_altofimage( $attachment ) {
     $attachment_id = '';
     if( $attachment ) {
       if( is_string( $attachment ) ) {
@@ -103,9 +103,9 @@ if( !function_exists( 'my_store_elements_get_altofimage' ) ) {
 }
 
 /** Get All Authors */
-if ( !function_exists( 'my_store_elements_get_auhtors' ) ) {
+if ( !function_exists( 'storezz_elements_get_auhtors' ) ) {
 
-  function my_store_elements_get_auhtors() {
+  function storezz_elements_get_auhtors() {
 
     $options = array();
 
@@ -121,9 +121,9 @@ if ( !function_exists( 'my_store_elements_get_auhtors' ) ) {
 }
 
 /** Get All Posts */
-if ( !function_exists( 'my_store_elements_get_posts' ) ) {
+if ( !function_exists( 'storezz_elements_get_posts' ) ) {
 
-  function my_store_elements_get_posts() {
+  function storezz_elements_get_posts() {
 
     $post_list = get_posts( array(
       'post_type' => 'post',
@@ -146,8 +146,8 @@ if ( !function_exists( 'my_store_elements_get_posts' ) ) {
 }
 
 /** Get Woocommerce Categories */
-if( !function_exists( 'my_store_elements_get_woo_categories_list' ) ) {
-  function my_store_elements_get_woo_categories_list() {
+if( !function_exists( 'storezz_elements_get_woo_categories_list' ) ) {
+  function storezz_elements_get_woo_categories_list() {
     $term_list = array('0' => __('Select Category', 'storezz--elements'));
 
     $terms = get_terms( array(
@@ -187,8 +187,8 @@ if( !function_exists( 'woocommerceCategorySlug' ) ) {
 }
 
 /** Get Sales Product List */
-if( !function_exists( 'my_store_elements_get_sales_products' ) ) {
-  function my_store_elements_get_sales_products() {
+if( !function_exists( 'storezz_elements_get_sales_products' ) ) {
+  function storezz_elements_get_sales_products() {
     $product_list = array( '0' => __( 'Select Product', 'storezz--elements' ) );
 
     $args = array(
@@ -224,8 +224,8 @@ if( !function_exists( 'my_store_elements_get_sales_products' ) ) {
 }
 
 /** Menu List */
-if( !function_exists( 'my_store_elements_menulist' ) ) {
-  function my_store_elements_menulist() {
+if( !function_exists( 'storezz_elements_menulist' ) ) {
+  function storezz_elements_menulist() {
     $menus = wp_get_nav_menus();
 
     $menu_list['none'] = esc_html__(' -- Select Menu -- ', 'storezz-');

@@ -40,7 +40,7 @@ class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
         'type' => \Elementor\Controls_Manager::SELECT2,
         'default' => '',
         'multiple' => true,
-        'options'   => my_store_elements_get_woo_categories_list(),
+        'options'   => storezz_elements_get_woo_categories_list(),
       ]
     );
 
