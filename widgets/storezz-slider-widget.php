@@ -1,6 +1,6 @@
 <?php
     /**
-     * Meta Store Slider Widget.
+     * Storezz Slider Widget.
      */
     class Storezz_Slider_Widget extends \Elementor\Widget_Base {
 
