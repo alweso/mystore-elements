@@ -1,13 +1,13 @@
 <?php
-    class My_Store_Product_List_Widget extends \Elementor\Widget_Base {
+    class Storezz_Product_Slider_Widget extends \Elementor\Widget_Base {
         /** Widget Name **/
         public function get_name() {
-            return 'storezz-product-list';
+            return 'storezz-product-slider';
         }
 
         /** Widget Title **/
         public function get_title() {
-            return esc_html__( 'Product List', 'storezz-elements' );
+            return esc_html__( 'Product Slider Widget', 'storezz-elements' );
         }
 
         /** Widget Icon **/
@@ -18,6 +18,11 @@
         /** Categories **/
         public function get_categories() {
             return [ 'storezz-elements' ];
+        }
+
+        /** Dependencies */
+        public function get_script_depends() {
+            return [ 'owl-carousel' ];
         }
 
         /** Widget Controls **/
@@ -42,6 +47,18 @@
                 'product_query', [
                     'label' => esc_html__('Content', 'storezz-elements'),
                 ]
+            );
+
+            $this->add_control(
+                'dot_nav_show',
+                    [
+                    'label' => esc_html__( 'Dot Nav', 'menheer-plugin' ),
+                    'type' => \Elementor\Controls_Manager::SWITCHER,
+                    'label_on' => esc_html__( 'Yes', 'menheer-plugin' ),
+                    'label_off' => esc_html__( 'No', 'menheer-plugin' ),
+                    'return_value' => 'yes',
+                    'default' => 'yes'
+                    ]
             );
 
                 $this->add_control(
@@ -76,26 +93,6 @@
                         'default' => [
                             'unit' => 'no',
                             'size' => 3,
-                        ],
-                    ]
-                );
-
-                $this->add_control(
-                    'column_gap',
-                    [
-                        'label' => __( 'Column Gap', 'storezz-elements' ),
-                        'type' => \Elementor\Controls_Manager::SLIDER,
-                        'size_units' => [ 'px' ],
-                        'range' => [
-                            'no' => [
-                                'min' => 0,
-                                'max' => 40,
-                                'step' => 1,
-                            ],
-                        ],
-                        'default' => [
-                            'unit' => 'px',
-                            'size' => 15,
                         ],
                     ]
                 );
@@ -386,28 +383,24 @@
         /** Render Layout **/
         protected function render() {
             $settings = $this->get_settings_for_display();
-            // echo "<pre>";
-            // print_r($settings);
-            // echo "</pre>";
             $product_type = isset( $settings['product_type'] ) ? $settings['product_type'] : 'latest';
-
             $args = $this->get_query_args( $product_type );
             $image_size = $settings['image_size_size'] ? $settings['image_size_size'] : 'large';
             $product_query = new WP_Query( $args );
             ?>
-                <div class="storezz-product-list" id="storezz-product-list-<?php echo esc_attr( $this->get_id() ); ?>">
+                <div class="">
 
                     <?php if( $product_query->have_posts() ) : ?>
-                        <ul class="product-list">
+                        <ul data-carousel-options='{"autoplay":"true","items":"4","loop":"true","nav":"true"}'class="storezz-product-slider owl-carousel">
                             <?php while( $product_query->have_posts() ) : $product_query->the_post(); ?>
-                                <li class="product">
+                                <li class="producteeg">
                                     <div class="product-image">
                                         <?php if( has_post_thumbnail() ) : ?>
                                             <?php
                                                 $img = wp_get_attachment_image_src( get_post_thumbnail_id(), $image_size );
                                             ?>
                                             <a href="<?php the_permalink(); ?>">
-                                                <img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php echo esc_attr( My_Store_elements_get_altofimage( absint( get_post_thumbnail_id() ) ) ); ?>">
+                                                <img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php echo esc_attr( Storezz_elements_get_altofimage( absint( get_post_thumbnail_id() ) ) ); ?>">
                                             </a>
                                     </div>
                                     <div class="content">
@@ -491,44 +484,5 @@
                 break;
             }
             return $args;
-        }
-
-        /** Render Header */
-        protected function render_header() {
-            $settings = $this->get_settings();
-            $this->add_render_attribute('header_attr', 'class', [
-                'storezz-header',
-                ]
-            );
-
-            $link_open = $link_close = "";
-            $target = $settings['header_link']['is_external'] ? ' target="_blank"' : '';
-            $nofollow = $settings['header_link']['nofollow'] ? ' rel="nofollow"' : '';
-            $header_tag = $settings['header_tag'] ? $settings['header_tag'] : 'h2';
-
-            if ($settings['header_link']['url']) {
-                $link_open = '<a href="' . $settings['header_link']['url'] . '"' . $target . $nofollow . '>';
-                $link_close = '</a>';
-            }
-
-            if ($settings['header_title']) {
-                ?>
-                <?php echo '<' . esc_attr($header_tag) . ' ' . $this->get_render_attribute_string('header_attr') . '>' ?>
-                    <?php
-                        echo wp_kses( $link_open, array(
-                            'a' => array(
-                                'target' => array(),
-                                'rel' => array(),
-                                'href' => array()
-                            )
-                        ) );
-                        echo esc_html($settings['header_title']);
-                        echo wp_kses( $link_close, array(
-                            'a' => array()
-                        ) );
-                    ?>
-                <?php echo '</' . esc_attr($header_tag) . '>'; ?>
-                <?php
-            }
         }
     }

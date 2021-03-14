@@ -1,5 +1,5 @@
 <?php
-class My_Store_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
+class Storezz_Instagram_Feeds_Widget extends \Elementor\Widget_Base {
     /** Widget Name **/
     public function get_name() {
         return 'storezz-instagram-feeds';

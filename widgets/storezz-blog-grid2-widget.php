@@ -2,16 +2,16 @@
     /**
      * Magazine Post Carousel Widget.
      */
-    class My_Store_Blog_Grid1_Widget extends \Elementor\Widget_Base {
+    class Storezz_Blog_Grid2_Widget extends \Elementor\Widget_Base {
 
         /** Widget Name */
         public function get_name() {
-            return 'storezz-blog-grid11-widget';
+            return 'storezz-blog-grid2-widget';
         }
 
         /** Widget Title */
         public function get_title() {
-            return __( 'Blog Grid 1', 'storezz-elements' );
+            return __( 'Blog Grid 2', 'storezz-elements' );
         }
 
         /** Icon */
@@ -63,7 +63,7 @@
                         'label' => __( 'Posts', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT2,
                         'multiple' => true,
-                        'options' => My_Store_elements_post_lists( $multiple = true ),
+                        'options' => Storezz_elements_post_lists( $multiple = true ),
                         'default' => [ 'all' ],
                     ]
                 );
@@ -74,7 +74,7 @@
                         'label' => __( 'Order By', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'date',
-                        'options' => My_Store_elements_orderby_list(),
+                        'options' => Storezz_elements_orderby_list(),
                     ]
                 );
 
@@ -84,7 +84,7 @@
                         'label' => __( 'Order', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'ASC',
-                        'options' => My_Store_elements_order_list(),
+                        'options' => Storezz_elements_order_list(),
                     ]
                 );
 
@@ -112,6 +112,48 @@
                     ]
                 );
 
+                $this->add_control(
+                    'show_date',
+                    [
+                        'label' => __( 'Show Date', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::SWITCHER,
+                        'label_on' => __( 'Show', 'storezz-elements' ),
+                        'label_off' => __( 'Hide', 'storezz-elements' ),
+                        'return_value' => 'yes',
+                        'default' => 'yes',
+                    ]
+                );
+
+                $this->add_control(
+                    'excerpt_length',
+                    [
+                        'label' => __( 'Excerpt Length', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::SLIDER,
+                        'size_units' => [ 'chars' ],
+                        'range' => [
+                            'no' => [
+                                'min' => 50,
+                                'max' => 200,
+                                'step' => 1,
+                            ],
+                        ],
+                        'default' => [
+                            'unit' => 'no',
+                            'size' => 50,
+                        ],
+                    ]
+                );
+
+                $this->add_control(
+                    'readmore_text',
+                    [
+                        'label' => __( 'Readmore Text', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => __( 'Read More', 'storezz-elements' ),
+                        'placeholder' => __( 'Type your title here', 'storezz-elements' ),
+                    ]
+                );
+
             $this->end_controls_section();
 
             $this->start_controls_section(
@@ -130,7 +172,7 @@
                         'size_units' => [ 'px' ],
                         'range' => [
                             'px' => [
-                                'min' => 200,
+                                'min' => 0,
                                 'max' => 1000,
                                 'step' => 5,
                             ]
@@ -140,7 +182,7 @@
                             'size' => 360,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .post-image' => 'height: {{SIZE}}{{UNIT}};',
+                            '{{WRAPPER}} .storezz-blog-grid2 li .post-image' => 'height: {{SIZE}}{{UNIT}};',
                         ],
                     ]
                 );
@@ -151,7 +193,7 @@
                         'label' => __( 'Image Size', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'medium',
-                        'options' => My_Store_elements_imagesizes_list(),
+                        'options' => Storezz_elements_imagesizes_list(),
                     ]
                 );
 
@@ -165,8 +207,7 @@
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .categories a:hover' => 'background-color: {{VALUE}}',
-                            '{{WRAPPER}} .storezz-blog-grid1 .post-title a:hover' => 'color: {{VALUE}}'
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title a:hover, {{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn:hover' => 'color: {{VALUE}}'
                         ],
                     ]
                 );
@@ -191,7 +232,7 @@
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .categories a' => 'background-color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .categories a' => 'background-color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -206,7 +247,7 @@
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .categories a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .categories a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -217,7 +258,42 @@
                         'name' => 'category_typography',
                         'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .storezz-blog-grid1 .categories a',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .categories a',
+                    ]
+                );
+
+            $this->end_controls_section();
+
+            $this->start_controls_section(
+                'author_style',
+                [
+                    'label' => __( 'Author & Date', 'storezz-elements' ),
+                    'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                ]
+            );
+
+                $this->add_control(
+                    'author_color',
+                    [
+                        'label' => __( 'Color', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::COLOR,
+                        'scheme' => [
+                            'type' => \Elementor\Scheme_Color::get_type(),
+                            'value' => \Elementor\Scheme_Color::COLOR_1,
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-metas' => 'color: {{VALUE}}',
+                        ],
+                    ]
+                );
+
+                $this->add_group_control(
+                    \Elementor\Group_Control_Typography::get_type(),
+                    [
+                        'name' => 'author_typography',
+                        'label' => __( 'Typography', 'storezz-elements' ),
+                        'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-metas',
                     ]
                 );
 
@@ -241,7 +317,7 @@
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .post-title a' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title a' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -252,7 +328,7 @@
                         'name' => 'title_typography',
                         'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .storezz-blog-grid1 .post-title a',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title',
                     ]
                 );
 
@@ -264,7 +340,7 @@
                         'allowed_dimensions' => 'vertical',
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .post-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
                         ],
                     ]
                 );
@@ -272,15 +348,15 @@
             $this->end_controls_section();
 
             $this->start_controls_section(
-                'author_style',
+                'excerpt_style',
                 [
-                    'label' => __( 'Author Text', 'storezz-elements' ),
+                    'label' => __( 'Excerpt', 'storezz-elements' ),
                     'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 ]
             );
 
                 $this->add_control(
-                    'author_color',
+                    'excerpt_color',
                     [
                         'label' => __( 'Color', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
@@ -289,7 +365,7 @@
                             'value' => \Elementor\Scheme_Color::COLOR_1,
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .storezz-blog-grid1 .author' => 'color: {{VALUE}}',
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt' => 'color: {{VALUE}}',
                         ],
                     ]
                 );
@@ -297,14 +373,76 @@
                 $this->add_group_control(
                     \Elementor\Group_Control_Typography::get_type(),
                     [
-                        'name' => 'author_typography',
+                        'name' => 'excerpt_typography',
                         'label' => __( 'Typography', 'storezz-elements' ),
                         'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-                        'selector' => '{{WRAPPER}} .storezz-blog-grid1 .author',
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt',
+                    ]
+                );
+
+                $this->add_control(
+                    'excerpt_margin',
+                    [
+                        'label' => __( 'Margin', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                        'allowed_dimensions' => 'vertical',
+                        'size_units' => [ 'px', '%', 'em' ],
+                        'selectors' => [
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .excerpt' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                        ],
                     ]
                 );
 
             $this->end_controls_section();
+
+            $this->start_controls_section(
+                'readmore_style',
+                [
+                    'label' => __( 'Readmore', 'storezz-elements' ),
+                    'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                ]
+            );
+
+                $this->add_control(
+                    'readmore_color',
+                    [
+                        'label' => __( 'Color', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::COLOR,
+                        'scheme' => [
+                            'type' => \Elementor\Scheme_Color::get_type(),
+                            'value' => \Elementor\Scheme_Color::COLOR_1,
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn' => 'color: {{VALUE}}',
+                        ],
+                    ]
+                );
+
+                $this->add_group_control(
+                    \Elementor\Group_Control_Typography::get_type(),
+                    [
+                        'name' => 'readmore_typography',
+                        'label' => __( 'Typography', 'storezz-elements' ),
+                        'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
+                        'selector' => '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn',
+                    ]
+                );
+
+                $this->add_control(
+                    'readmore_margin',
+                    [
+                        'label' => __( 'Margin', 'storezz-elements' ),
+                        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                        'allowed_dimensions' => 'vertical',
+                        'size_units' => [ 'px', '%', 'em' ],
+                        'selectors' => [
+                            '{{WRAPPER}} .storezz-blog-grid2 .post-content .readmore-btn' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+                        ],
+                    ]
+                );
+
+            $this->end_controls_section();
+
         }
 
         /** Render Layout */
@@ -316,8 +454,10 @@
             $orderby = isset( $settings['orderby'] ) ? $settings['orderby'] : 'date';
             $order = isset( $settings['order'] ) ? $settings['order'] : 'ASC';
             $posts = isset( $settings['posts'] ) ? $settings['posts'] : array( 'all' );
+            $readmore_text = isset( $settings['readmore_text'] ) ? $settings['readmore_text'] : esc_html('Read More', 'storezz-elements');
             $image_size = isset( $settings['image_size'] ) ? $settings['image_size'] : 'medium';
             $show_category = ( $settings['show_category'] == 'yes' ) ? true : false;
+            $show_date = ( $settings['show_date'] == 'yes' ) ? true : false;
             $show_author = ( $settings['show_author'] == 'yes' ) ? true : false;
 
             $args = array(
@@ -334,7 +474,7 @@
             $post_query = new WP_Query( $args );
             ?>
                 <?php if( $post_query->have_posts() ) : ?>
-                    <ul class="storezz-blog-grid1" id="storezz-blog-grid1-<?php echo esc_attr( $this->get_id() ) ?>">
+                    <ul class="storezz-blog-grid2" id="storezz-blog-grid2-<?php echo esc_attr( $this->get_id() ) ?>">
                         <?php while( $post_query->have_posts() ) : $post_query->the_post(); ?>
                             <?php if( has_post_thumbnail() ) : ?>
                                 <li>
@@ -343,23 +483,37 @@
                                     ?>
                                     <div class="post-image">
                                         <a href="<?php the_permalink(); ?>">
-                                            <img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php echo esc_attr( My_Store_elements_get_altofimage( absint(get_post_thumbnail_id()) ) ) ?>" />
+                                            <img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php echo esc_attr( Storezz_elements_get_altofimage( absint(get_post_thumbnail_id()) ) ) ?>" />
                                         </a>
+                                    </div>
+                                    <div class="post-content">
                                         <?php if( $show_category ) : ?>
                                             <div class="categories">
                                                 <?php echo $this->get_post_categories(); ?>
                                             </div>
                                         <?php endif; ?>
-                                    </div>
-                                    <div class="post-content">
+
+                                        <?php if( $show_author || $show_date ) : ?>
+                                            <div class="post-metas">
+                                                <?php if( $show_author ) : ?>
+                                                    <span><?php echo esc_html( get_the_author_meta('nickname') ); ?></span>
+                                                <?php endif; ?>
+                                                <?php if( $show_date ) : ?>
+                                                    <span><?php the_date(); ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+
                                         <h3 class="post-title">
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
 
-                                        <?php if( $show_author ) : ?>
-                                            <div class="author">
-                                                <span><?php echo esc_html($this->get_author_name()); ?></span>
-                                            </div>
+                                        <p class="excerpt">
+                                            <?php echo esc_html( $this->get_excerpt() ); ?>
+                                        </p>
+
+                                        <?php if( $readmore_text ) : ?>
+                                            <a href="<?php the_permalink(); ?>" class="readmore-btn"><?php echo esc_html( $readmore_text ); ?></a>
                                         <?php endif; ?>
                                     </div>
                                 </li>
@@ -368,6 +522,15 @@
                     </ul>
                 <?php wp_reset_postdata(); endif; ?>
             <?php
+        }
+
+        /** Post Excerpt */
+        protected function get_excerpt() {
+            $settings = $this->get_settings_for_display();
+
+            $excerpt_length = isset( $settings['excerpt_length']['cars'] ) ? $settings['excerpt_length']['cars'] : 50;
+
+            return substr( strip_tags( strip_shortcodes( get_the_content() ) ), 0, $excerpt_length );
         }
 
         /** Post Categories */
@@ -382,10 +545,5 @@
             }
 
             return $categories_html;
-        }
-
-        /** Post Author */
-        protected function get_author_name() {
-            return esc_html__( 'By ', 'storezz-elements' ) . get_the_author_meta('nickname');
         }
     }

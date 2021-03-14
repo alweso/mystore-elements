@@ -3,7 +3,7 @@
 /**
  * Magazine Post Carousel Widget.
  */
-class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
+class Storezz_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
 
     /** Widget Name */
     public function get_name() {
@@ -39,7 +39,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 1', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 
@@ -48,7 +48,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 2', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 
@@ -57,7 +57,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 3', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 
@@ -66,7 +66,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 4', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 
@@ -75,7 +75,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 5', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 0,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 
@@ -250,7 +250,7 @@ class My_Store_Product_Category_Block2_Widget extends \Elementor\Widget_Base {
         $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
         $image = wp_get_attachment_image_src($thumbnail_id, $image_size);
         ?>
-        <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(My_Store_elements_get_altofimage(absint($thumbnail_id))); ?>" />
+        <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(Storezz_elements_get_altofimage(absint($thumbnail_id))); ?>" />
         <a href="<?php echo esc_url(get_term_link($category)); ?>" class="cat-btn">
             <span class="ct-name" ><?php echo esc_html($category->name); ?></span>
             <span class="ct-pcount"><?php echo esc_html($category->count); ?> <?php echo esc_html__('Products Inside', 'storezz-elements'); ?></span>

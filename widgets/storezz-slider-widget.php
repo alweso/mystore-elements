@@ -2,7 +2,7 @@
     /**
      * Meta Store Slider Widget.
      */
-    class My_Store_Slider_Widget extends \Elementor\Widget_Base {
+    class Storezz_Slider_Widget extends \Elementor\Widget_Base {
 
         /** Widget Name */
         public function get_name() {

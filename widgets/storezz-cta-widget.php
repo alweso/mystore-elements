@@ -1,5 +1,5 @@
 <?php
-class My_Store_Cta_Widget extends \Elementor\Widget_Base {
+class Storezz_Cta_Widget extends \Elementor\Widget_Base {
     /** Widget Name **/
     public function get_name() {
         return 'storezz-cta';
@@ -58,7 +58,7 @@ class My_Store_Cta_Widget extends \Elementor\Widget_Base {
                     'label' => __( 'Title Tag', 'storezz-elements' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'default' => 'h3',
-                    'options' => My_Store_elements_tag_lists(),
+                    'options' => Storezz_elements_tag_lists(),
                 ]
             );
 

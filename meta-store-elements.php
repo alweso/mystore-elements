@@ -20,7 +20,7 @@
      *
      * @since 1.0.1
      */
-    final class My_Store_Elements {
+    final class Storezz_Elements {
 
         /**
          * Plugin Version
@@ -57,7 +57,7 @@
          * @access private
          * @static
          *
-         * @var My_Store_Elements The single instance of the class.
+         * @var Storezz_Elements The single instance of the class.
          */
         private static $_instance = null;
 
@@ -71,7 +71,7 @@
          * @access public
          * @static
          *
-         * @return My_Store_Elements An instance of the class.
+         * @return Storezz_Elements An instance of the class.
          */
         public static function instance() {
 
@@ -318,24 +318,24 @@
             }
 
             // Register widget
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Slider_Widget() ); // Slider
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Blog_Grid1_Widget() ); // Blog Grid 1
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Blog_Grid2_Widget() ); // Blog Grid 2
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Vertical_Menu_Widget() ); // Vertical Menu
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Instagram_Feeds_Widget() ); // Instagram Feeds
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Testimonial_Slider_Widget() ); // Testimonial Slider
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Cta_Widget() ); // Call To Action
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Countdown_Widget() ); // Countdown
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Vertical_Menu_Widget() ); // Vertical Menu
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Slider_Widget() ); // Slider
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Blog_Grid1_Widget() ); // Blog Grid 1
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Blog_Grid2_Widget() ); // Blog Grid 2
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Vertical_Menu_Widget() ); // Vertical Menu
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Instagram_Feeds_Widget() ); // Instagram Feeds
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Testimonial_Slider_Widget() ); // Testimonial Slider
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Cta_Widget() ); // Call To Action
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Countdown_Widget() ); // Countdown
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Vertical_Menu_Widget() ); // Vertical Menu
 
             if( class_exists( 'woocommerce' ) ) {
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Tabs_Grid_Widget() ); // Product Tabs Grid
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_List_Widget() ); // Product List
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Category_Block1_Widget() ); // Procut Category Block 1
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Category_Block2_Widget() ); // Procut Category Block 2
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Slider_Widget() ); // Procut Category Block 2
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Category_Grid_Widget() ); // Procut Category Block 2
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \My_Store_Product_Grid_Widget() ); // Procut Category Block 2
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_Tabs_Grid_Widget() ); // Product Tabs Grid
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_List_Widget() ); // Product List
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_Category_Block1_Widget() ); // Procut Category Block 1
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_Category_Block2_Widget() ); // Procut Category Block 2
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_Slider_Widget() ); // Procut Category Block 2
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Category_Grid_Widget() ); // Procut Category Block 2
+                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Storezz_Product_Grid_Widget() ); // Procut Category Block 2
             }
         }
 
@@ -366,4 +366,4 @@
 
     }
 
-    My_Store_Elements::instance();
+    Storezz_Elements::instance();

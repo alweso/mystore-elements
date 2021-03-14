@@ -3,7 +3,7 @@
 /**
 * Magazine Post Carousel Widget.
 */
-class My_Store_Product_Grid_Widget extends \Elementor\Widget_Base {
+class Storezz_Product_Grid_Widget extends \Elementor\Widget_Base {
 
   /** Widget Name */
   public function get_name() {

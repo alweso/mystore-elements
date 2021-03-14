@@ -1,5 +1,5 @@
 <?php
-    class My_Store_Testimonial_Slider_Widget extends \Elementor\Widget_Base {
+    class Storezz_Testimonial_Slider_Widget extends \Elementor\Widget_Base {
 
         public function get_name() {
             return 'storezz-testimonial-slider';

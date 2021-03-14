@@ -3,7 +3,7 @@
 /**
  * Magazine Post Carousel Widget.
  */
-class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
+class Storezz_Category_Grid_Widget extends \Elementor\Widget_Base {
 
     /** Widget Name */
     public function get_name() {
@@ -39,7 +39,7 @@ class My_Store_Category_Grid_Widget extends \Elementor\Widget_Base {
             'label' => __('Category 1', 'storezz-elements'),
             'type' => \Elementor\Controls_Manager::SELECT2,
             'multiple' => true,
-            'options' => My_Store_elements_get_woo_categories_list(),
+            'options' => Storezz_elements_get_woo_categories_list(),
                 ]
         );
 

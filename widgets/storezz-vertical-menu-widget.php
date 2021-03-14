@@ -2,7 +2,7 @@
     /**
      * Vertical Menu.
      */
-    class My_Store_Vertical_Menu_Widget extends \Elementor\Widget_Base {
+    class Storezz_Vertical_Menu_Widget extends \Elementor\Widget_Base {
 
         /** Widget Name */
         public function get_name() {
@@ -61,7 +61,7 @@
                         'label' => __( 'Heading Tag', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'h3',
-                        'options' => My_Store_elements_tag_lists(),
+                        'options' => Storezz_elements_tag_lists(),
                     ]
                 );
 
@@ -71,7 +71,7 @@
                         'label' => __( 'Menu', 'storezz-elements' ),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 'none',
-                        'options' => My_Store_elements_menulist(),
+                        'options' => Storezz_elements_menulist(),
                     ]
                 );
 
