@@ -1,6 +1,6 @@
 <?php
     /**
-     * Plugin Name: My Store Elements
+     * Plugin Name: Storezz Elements
      * Description: Elementor blocks for Ecommerce Websites
      * Plugin URI:
      * Version: 1.0.1
